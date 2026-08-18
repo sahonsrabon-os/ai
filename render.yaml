@@ -1,0 +1,87 @@
+# Exported from Render on 2026-08-18T18:22:32Z
+version: "1"
+projects:
+- name: My project
+  environments:
+  - name: Production
+    services:
+    - type: web
+      name: ai
+      runtime: static
+      repo: https://github.com/sahonsrabon-os/ai
+      envVars:
+      - key: UDS_PORT
+        sync: false
+      - key: ALLOWED_DIRS
+        sync: false
+      - key: MAX_TOOL_ROUNDS
+        sync: false
+      - key: ANTIDOTE_ENABLED
+        sync: false
+      - key: ALLOWED_ORIGINS
+        sync: false
+      - key: LOG_DIR
+        sync: false
+      - key: CACHE_MAX_ENTRIES
+        sync: false
+      - key: CACHE_TTL
+        sync: false
+      - key: CACHE_DIR
+        sync: false
+      - key: PUSHER_CLUSTER
+        sync: false
+      - key: PUSHER_SECRET
+        sync: false
+      - key: PUSHER_KEY
+        sync: false
+      - key: PUSHER_APP_ID
+        sync: false
+      - key: CUSTOM_PROXY_API_KEY
+        sync: false
+      - key: PROXY_LIST
+        sync: false
+      - key: CUSTOM_PROVIDER_1_TYPE
+        sync: false
+      - key: CUSTOM_PROVIDER_1_MODELS
+        sync: false
+      - key: CUSTOM_PROVIDER_1_PRIORITY
+        sync: false
+      - key: CUSTOM_PROVIDER_1_KEY
+        sync: false
+      - key: CUSTOM_PROVIDER_1_URL
+        sync: false
+      - key: CUSTOM_PROVIDER_1_NAME
+        sync: false
+      - key: GEMINI_MODELS
+        sync: false
+      - key: GEMINI_PRIORITY
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: GEMINI_BASE
+        sync: false
+      - key: GROQ_MODELS
+        sync: false
+      - key: GROQ_PRIORITY
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GROQ_BASE
+        sync: false
+      - key: OPENCODE_MODELS
+        sync: false
+      - key: OPENCODE_PRIORITY
+        sync: false
+      - key: OPENCODE_API_KEY
+        sync: false
+      - key: OPENCODE_BASE
+        sync: false
+      - key: SESSION_VERIFY_URL
+        sync: false
+      - key: APP_URL
+        sync: false
+      - key: PORT
+        sync: false
+      buildCommand: 'node start.js -s # direct start (skip menu)'
+      staticPublishPath: npm run build
+      autoDeployTrigger: commit
