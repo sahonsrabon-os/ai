@@ -1,0 +1,14 @@
+{
+  "_comment": "External MCP servers for Mission Barisal. Add a new service by appending one entry and restarting the server — no api.js changes needed.",
+  "servers": [
+    {
+      "name": "zombiecoder",
+      "url": "https://app.banani.co/api/mcp/mcp",
+      "transport": "http",
+      "enabled": true,
+      "autoConnect": true,
+      "token": "bnni_EqOtSK9eQdI5Et4dRZbmHBAMU5HzsMSL",
+      "note": "Public Mission Barisal gateway (test)."
+    }
+  ]
+}

@@ -1,0 +1,596 @@
+2026-07-19 02:00:24.091 [info] [Main] StorageMainService: creating application shared storage
+2026-07-19 02:00:24.118 [info] [Main] [shared storage] Creating shared storage database at '/home/sahon/.vscode-shared/sharedStorage/state.vscdb' (wasCreated: false)
+2026-07-19 02:00:24.119 [info] [Main] [shared storage] Initializing fallback application storage (path: /home/sahon/.config/Code/User/globalStorage/state.vscdb)
+2026-07-19 02:00:24.146 [info] [MCP Gateway] [McpGatewayService] Initialized
+2026-07-19 02:00:24.309 [info] [Main] [shared storage] Fallback application storage initialized with 233 items
+2026-07-19 02:00:24.316 [info] [Main] update#setState idle
+2026-07-19 02:00:26.406 [info] [Settings Sync] [AutoSync] Using settings sync service https://vscode-sync.trafficmanager.net/
+2026-07-19 02:00:26.406 [info] [Settings Sync] [AutoSync] Disabled.
+2026-07-19 02:00:26.506 [info] [Pty Host] Revived process, old id 6d5919ee7b117054a3634ed757db934a-6 -> new id 1
+2026-07-19 02:00:27.101 [info] [Window] Started local extension host with pid 14727.
+2026-07-19 02:00:27.136 [info] [Pty Host] Expanding terminal instance, old id 6d5919ee7b117054a3634ed757db934a-5 -> new id undefined
+2026-07-19 02:00:27.136 [warning] [Pty Host] Couldn't get layout info, a terminal was probably disconnected Could not find pty 5 on pty host
+2026-07-19 02:00:27.136 [info] [Pty Host] Expanding terminal instance, old id 6d5919ee7b117054a3634ed757db934a-6 -> new id 1
+2026-07-19 02:00:28.280 [warning] [Pty Host] Persistent process "1": Process had no disconnect runners but was an orphan
+2026-07-19 02:00:28.280 [info] [Pty Host] Persistent process reconnection "1"
+2026-07-19 02:00:28.420 [info] [Pty Host] Persistent process "1": Replaying 251 chars and 1 size events
+2026-07-19 02:00:28.540 [error] [Window] The vendor 'mission-barisal' is already registered and cannot be registered twice
+2026-07-19 02:00:28.621 [info] [Extension Host] Extension host with pid 14727 started
+2026-07-19 02:00:28.622 [info] [Extension Host] Skipping acquiring lock for /home/sahon/.config/Code/User/workspaceStorage/6d5919ee7b117054a3634ed757db934a.
+2026-07-19 02:00:28.664 [warning] [Window] [zombie-coder.mission-barisal-gateway]: Cannot register 'mission-barisal.serverUrl'. This property is already registered.
+2026-07-19 02:00:29.171 [info] [Window] [AccountPolicyGate] apply: state=inactive, reason=undefined, isRestricted=false
+2026-07-19 02:00:29.344 [info] [Extension Host] ExtensionService#_doActivateExtension vscode.github-authentication, startup: false, activationEvent: 'onAuthenticationRequest:github'
+2026-07-19 02:00:29.393 [info] [Extension Host] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onLanguage'
+2026-07-19 02:00:29.420 [info] [Extension Host] ExtensionService#_doActivateExtension GitHub.copilot-chat, startup: false, activationEvent: 'onChatParticipant:github.copilot.editsAgent'
+2026-07-19 02:00:31.058 [info] [Window] Settings Sync: Account status changed from uninitialized to unavailable
+2026-07-19 02:00:31.485 [info] [Cloud Changes] Prompting to enable cloud changes, has application previously launched from Continue On flow: false
+2026-07-19 02:00:31.568 [info] [Extension Host] ExtensionService#_doActivateExtension vscode.terminal-suggest, startup: false, activationEvent: 'onTerminalShellIntegration:*'
+2026-07-19 02:00:31.583 [error] [Window] [Extension Host] (node:14727) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `exe --trace-deprecation ...` to show where the warning was created)
+2026-07-19 02:00:31.684 [info] [Extension Host] ExtensionService#_doActivateExtension openai.chatgpt, startup: false, activationEvent: 'onChatSession:openai-codex'
+2026-07-19 02:00:32.614 [error] [Window] [Extension Host] (node:14727) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+2026-07-19 02:00:32.669 [info] [Extension Host] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+2026-07-19 02:00:32.741 [info] [Codex] Activating Codex extension
+2026-07-19 02:00:32.741 [info] [Codex] [CodexMcpConnection] Spawning codex app-server
+2026-07-19 02:00:32.741 [info] [Codex] [IpcRouter] I am the router
+2026-07-19 02:00:32.741 [info] [GitHub Authentication] Reading sessions from keychain...
+2026-07-19 02:00:32.741 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:00:32.741 [warning] [Codex] [IpcClient] Received broadcast but no handler is configured method=client-status-changed
+2026-07-19 02:00:32.742 [info] [GitHub Copilot Chat] [GitExtensionServiceImpl] Initializing Git extension service.
+2026-07-19 02:00:32.744 [info] [Extension Host] ExtensionService#_doActivateExtension vscode.configuration-editing, startup: false, activationEvent: 'onLanguage:jsonc'
+2026-07-19 02:00:32.758 [info] [Extension Host] ExtensionService#_doActivateExtension vscode.json-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2026-07-19 02:00:32.856 [info] [Extension Host] ExtensionService#_doActivateExtension vscode.typescript-language-features, startup: false, activationEvent: 'onLanguage:jsonc'
+2026-07-19 02:00:32.883 [info] [Window] Auto updating outdated extensions. openai.chatgpt
+2026-07-19 02:00:32.933 [info] [Extension Host] ExtensionService#_doActivateExtension vscode.microsoft-authentication, startup: false, activationEvent: 'onAuthenticationRequest:microsoft'
+2026-07-19 02:00:33.224 [info] [Remote Tunnel Service] No other tunnel running
+2026-07-19 02:00:33.231 [info] [GitHub Authentication] Got stored sessions!
+2026-07-19 02:00:33.231 [info] [GitHub Authentication] Got 3 verified sessions.
+2026-07-19 02:00:33.231 [info] [GitHub Authentication] Got 3 sessions for ...
+2026-07-19 02:00:33.231 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:00:33.231 [info] [GitHub Authentication] Got 3 sessions for ...
+2026-07-19 02:00:33.231 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:00:33.231 [info] [GitHub Authentication] Got 3 sessions for ...
+2026-07-19 02:00:33.232 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:00:33.232 [info] [GitHub Authentication] Got 3 sessions for ...
+2026-07-19 02:00:33.232 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:00:33.232 [info] [GitHub Authentication] Got 3 sessions for ...
+2026-07-19 02:00:33.232 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:00:33.232 [info] [GitHub Authentication] Got 3 sessions for ...
+2026-07-19 02:00:33.234 [info] [Extension Host] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+2026-07-19 02:00:33.302 [info] [Extension Host] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+2026-07-19 02:00:33.374 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:00:33.374 [info] [GitHub Authentication] Got 1 sessions for ...
+2026-07-19 02:00:33.452 [info] [GitHub Copilot Chat] [GitExtensionServiceImpl] Successfully activated the vscode.git extension.
+2026-07-19 02:00:33.452 [info] [GitHub Copilot Chat] [GitExtensionServiceImpl] Enablement state of the vscode.git extension: true.
+2026-07-19 02:00:33.452 [info] [GitHub Copilot Chat] [GitExtensionServiceImpl] Successfully registered Git commit message provider.
+2026-07-19 02:00:33.452 [info] [Extension Host] Eager extensions activated
+2026-07-19 02:00:33.624 [info] [Git] [main] Log level: Info
+2026-07-19 02:00:33.624 [info] [Git] [main] Validating found git in: "git"
+2026-07-19 02:00:33.624 [info] [Git] [main] Using git "2.34.1" from "git"
+2026-07-19 02:00:33.624 [info] [Git] [Model][doInitialScan] Initial repository scan started
+2026-07-19 02:00:33.624 [info] [Git] > git rev-parse --show-toplevel [42ms]
+2026-07-19 02:00:33.624 [info] [Git] fatal: not a git repository (or any of the parent directories): .git
+2026-07-19 02:00:33.625 [info] [GitHub] Log level: Info
+2026-07-19 02:00:33.642 [info] [Git] > git rev-parse --show-toplevel [2ms]
+2026-07-19 02:00:33.642 [info] [Git] fatal: not a git repository (or any of the parent directories): .git
+2026-07-19 02:00:33.663 [info] [Git] > git rev-parse --show-toplevel [8ms]
+2026-07-19 02:00:33.663 [info] [Git] fatal: not a git repository (or any of the parent directories): .git
+2026-07-19 02:00:33.951 [info] [Shared] Getting Manifest... openai.chatgpt
+2026-07-19 02:00:34.014 [info] [GitHub Copilot Chat] ConversationFeature: Waiting for copilot token to activate conversation feature
+2026-07-19 02:00:34.127 [info] [Git] > git rev-parse --show-toplevel [438ms]
+2026-07-19 02:00:34.127 [info] [Git] fatal: not a git repository (or any of the parent directories): .git
+2026-07-19 02:00:34.127 [info] [Codex] [CodexMcpConnection] Initialize received id=1
+2026-07-19 02:00:34.140 [info] [Extension Host] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: false, activationEvent: 'onStartupFinished'
+2026-07-19 02:00:34.153 [info] [Extension Host] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+2026-07-19 02:00:34.221 [info] [Extension Host] ExtensionService#_doActivateExtension esbenp.prettier-vscode, startup: false, activationEvent: 'onStartupFinished'
+2026-07-19 02:00:34.244 [info] [Extension Host] ExtensionService#_doActivateExtension ms-vscode-remote.remote-containers, startup: false, activationEvent: 'onStartupFinished'
+2026-07-19 02:00:34.418 [info] [Shared] Installing extension: openai.chatgpt {"installPreReleaseVersion":true,"productVersion":{"version":"1.120.0","date":"2026-05-12T20:17:22Z"},"pinned":false,"operation":3,"isApplicationScoped":false,"profileLocation":{"$mid":1,"external":"vscode-userdata:/home/sahon/.vscode/extensions/extensions.json","path":"/home/sahon/.vscode/extensions/extensions.json","scheme":"vscode-userdata"},"isBuiltin":false}
+2026-07-19 02:00:34.448 [info] [Window] [AccountPolicyGate] apply: state=inactive, reason=undefined, isRestricted=false
+2026-07-19 02:00:34.590 [info] [Extension Host] ExtensionService#_doActivateExtension zombie-coder.mission-barisal, startup: false, activationEvent: 'onStartupFinished'
+2026-07-19 02:00:34.599 [info] [Extension Host] ExtensionService#_doActivateExtension zombie-coder.mission-barisal-gateway, startup: false, activationEvent: 'onStartupFinished'
+2026-07-19 02:00:34.606 [info] [GitHub Authentication] Getting sessions for read:user,repo,user:email,workflow...
+2026-07-19 02:00:34.606 [info] [GitHub Authentication] Got 2 sessions for read:user,repo,user:email,workflow...
+2026-07-19 02:00:34.774 [warning] [Window] Creation of workbench contribution 'chat.builtinTools' took 134ms.
+2026-07-19 02:00:35.009 [info] [Window] [perf] Render performance baseline is 75ms
+2026-07-19 02:00:35.062 [error] [Codex] [CodexMcpConnection] cli: message="2026-07-18T20:00:34.285203Z  WARN codex_core_plugins::manager: failed to warm remote plugin catalog cache error=remote plugin catalog request to https://chatgpt.com/backend-api/ps/plugins/list failed with status 401 Unauthorized: {\n  \"error\": {\n    \"message\": \"Your authentication token has been invalidated. Please try signing in again.\",\n    \"type\": \"invalid_request_error\",\n    \"code\": \"token_invalidated\",\n    \"param\": null\n  },\n  \"status\": 401\n}\n2026-07-18T20:00:34.292472Z ERROR codex_models_manager::manager: failed to refresh available models: unexpected status 401 Unauthorized: Your authentication token has been invalidated. Please try signing in again., url: https://chatgpt.com/backend-api/codex/models?client_version=0.144.5, cf-ray: a1d412c508947d0d-DAC, auth error: 401, auth error code: token_invalidated\n2026-07-18T20:00:34.351381Z  WARN codex_core_plugins::manager: failed to load recommended plugins error=remote plugin catalog request to https://chatgpt.com/backend-api/ps/plugins/suggested failed with status 401 Unauthorized: {\n  \"error\": {\n    \"message\": \"Your authentication token has been invalidated. Please try signing in again.\",\n    \"type\": \"invalid_request_error\",\n    \"code\": \"token_invalidated\",\n    \"param\": null\n  },\n  \"status\": 401\n}\n2026-07-18T20:00:34.358716Z  WARN codex_core_plugins::manager: failed to warm featured plugin ids cache error=remote featured plugin request to https://chatgpt.com/backend-api/plugins/featured failed with status 401 Unauthorized: {\n  \"error\": {\n    \"message\": \"Your authentication token has been invalidated. Please try signing in again.\",\n    \"type\": \"invalid_request_error\",\n    \"code\": \"token_invalidated\",\n    \"param\": null\n  },\n  \"status\": 401\n}\n2026-07-18T20:00:34.534896Z  WARN codex_core_plugins::manager: failed to refresh remote installed plugins cache error=remote plugin catalog request to https://chatgpt.com/backend-api/ps/plugins/installed failed with status 401 Unauthorized: {\n  \"error\": {\n    \"message\": \"Your authentication token has been invalidated. Please try signing in again.\",\n    \"type\": \"invalid_request_error\",\n    \"code\": \"token_invalidated\",\n    \"param\": null\n  },\n  \"status\": 401\n}\n2026-07-18T20:00:34.665474Z  WARN codex_core_plugins::remote::remote_installed_plugin_sync: remote installed plugin bundle sync failed error=remote plugin catalog request to https://chatgpt.com/backend-api/ps/plugins/installed failed with status 401 Unauthorized: {\n  \"error\": {\n    \"message\": \"Your authentication token has been invalidated. Please try signing in again.\",\n    \"type\": \"invalid_request_error\",\n    \"code\": \"token_invalidated\",\n    \"param\": null\n  },\n  \"status\": 401\n}"
+2026-07-19 02:00:35.097 [info] [GitHub Copilot Chat] Using the Electron fetcher.
+2026-07-19 02:00:35.158 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:00:35.158 [info] [GitHub Authentication] Got 3 sessions for ...
+2026-07-19 02:00:35.160 [info] [Microsoft Authentication] [aebc6443-996d-45c2-90f0-388ff96faa56] Native Broker enabled: false
+2026-07-19 02:00:35.717 [info] [GitHub Copilot Chat] [CopilotCLI] OpenTelemetry enabled: exporter=file, source=github.copilot
+2026-07-19 02:00:35.729 [info] [Git] > git rev-parse --show-toplevel [1034ms]
+2026-07-19 02:00:35.729 [info] [Git] fatal: not a git repository (or any of the parent directories): .git
+2026-07-19 02:00:35.757 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:00:35.757 [info] [GitHub Authentication] Got 3 sessions for ...
+2026-07-19 02:00:35.943 [info] [Git] > git rev-parse --show-toplevel [160ms]
+2026-07-19 02:00:35.943 [info] [Git] fatal: not a git repository (or any of the parent directories): .git
+2026-07-19 02:00:35.960 [info] [GitHub Copilot Chat] [CopilotCLIChatSessionContentProvider] listSessions took 1340.9692019999993ms
+2026-07-19 02:00:36.020 [error] [Extension Host] Error: Chat model provider for vendor mission-barisal is already registered.
+    at t3.registerLanguageModelProvider (vscode-file://vscode-app/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:938:22102)
+    at dMt.$registerLanguageModelProvider (vscode-file://vscode-app/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:945:11575)
+    at a._doInvokeHandler (vscode-file://vscode-app/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:4970:51744)
+    at a._invokeHandler (vscode-file://vscode-app/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:4970:51490)
+    at a._receiveRequest (vscode-file://vscode-app/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:4970:50271)
+    at a._receiveOneMessage (vscode-file://vscode-app/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:4970:49105)
+    at rye.value (vscode-file://vscode-app/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:4970:47177)
+    at T._deliver (vscode-file://vscode-app/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:405:3268)
+    at T.fire (vscode-file://vscode-app/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:405:3587)
+    at A3.fire (vscode-file://vscode-app/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:1034:9632)
+    at MessagePort.<anonymous> (vscode-file://vscode-app/usr/share/code/resources/app/out/vs/workbench/workbench.desktop.main.js:4985:16416)
+2026-07-19 02:00:36.023 [info] [GitHub Authentication] Getting sessions for read:user,repo,user:email,workflow...
+2026-07-19 02:00:36.023 [info] [GitHub Authentication] Got 2 sessions for read:user,repo,user:email,workflow...
+2026-07-19 02:00:36.024 [info] [Microsoft Authentication] [getSessions] [all] starting
+2026-07-19 02:00:36.024 [info] [Microsoft Authentication] [getSessions] [all] returned 0 session(s)
+2026-07-19 02:00:36.024 [info] [Microsoft Authentication] [getSessions] [all] starting
+2026-07-19 02:00:36.024 [info] [Microsoft Authentication] [getSessions] [all] returned 0 session(s)
+2026-07-19 02:00:36.025 [info] [Microsoft Authentication] [getSessions] [all] starting
+2026-07-19 02:00:36.025 [info] [Microsoft Authentication] [getSessions] [all] returned 0 session(s)
+2026-07-19 02:00:36.025 [info] [GitHub Copilot Chat] [CopilotCLI] MCP server started. Lock file: /home/sahon/.copilot/ide/4e7d77d8-4c5c-44ae-8262-f53d75b1a4ea.lock
+2026-07-19 02:00:36.025 [info] [GitHub Copilot Chat] [CopilotCLI] Server URI: unix:/tmp/mcp-pngIo5/mcp.sock#%2Fmcp
+2026-07-19 02:00:36.030 [info] [Git] > git rev-parse --show-toplevel [62ms]
+2026-07-19 02:00:36.030 [info] [Git] fatal: not a git repository (or any of the parent directories): .git
+2026-07-19 02:00:36.041 [error] [Window] Chat model provider for vendor mission-barisal is already registered.
+2026-07-19 02:00:36.069 [info] [GitHub Copilot Chat] Logged in as zombiecoderbd
+2026-07-19 02:00:36.072 [info] [Microsoft Authentication] [getSessions] [499b84ac-1321-427f-aa17-267ca6975798/.default offline_access] starting
+2026-07-19 02:00:36.072 [info] [Microsoft Authentication] [aebc6443-996d-45c2-90f0-388ff96faa56] Native Broker enabled: false
+2026-07-19 02:00:36.075 [info] [Git] > git rev-parse --show-toplevel [9ms]
+2026-07-19 02:00:36.075 [info] [Git] fatal: not a git repository (or any of the parent directories): .git
+2026-07-19 02:00:36.122 [info] [Microsoft Authentication] [getSessions] [499b84ac-1321-427f-aa17-267ca6975798/.default offline_access] returned 0 session(s)
+2026-07-19 02:00:36.130 [info] [Git] > git rev-parse --show-toplevel [10ms]
+2026-07-19 02:00:36.130 [info] [Git] fatal: not a git repository (or any of the parent directories): .git
+2026-07-19 02:00:36.133 [info] [Git] [Model][doInitialScan] Initial repository scan completed - repositories (0), closed repositories (0), parent repositories (0), unsafe repositories (0)
+2026-07-19 02:00:36.148 [info] [Git] > git rev-parse --show-toplevel [1ms]
+2026-07-19 02:00:36.148 [info] [Git] fatal: not a git repository (or any of the parent directories): .git
+2026-07-19 02:00:36.234 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:00:36.234 [info] [GitHub Authentication] Got 3 sessions for ...
+2026-07-19 02:00:36.310 [info] [GitHub Authentication] Getting sessions for read:user,repo,user:email,workflow...
+2026-07-19 02:00:36.310 [info] [GitHub Authentication] Got 2 sessions for read:user,repo,user:email,workflow...
+2026-07-19 02:00:36.650 [info] [GitHub Copilot Chat] Got Copilot token for zombiecoderbd
+2026-07-19 02:00:36.650 [info] [GitHub Copilot Chat] Copilot Chat: 0.48.1, VS Code: 1.120.0
+2026-07-19 02:00:36.668 [info] [GitHub Copilot Chat] [context keys] Setting context key: github.copilot-chat.activated
+2026-07-19 02:00:36.670 [info] [GitHub Copilot Chat] activationBlocker from 'languageModelAccess' took for 2829ms
+2026-07-19 02:00:36.702 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:00:36.702 [info] [GitHub Authentication] Got 3 sessions for ...
+2026-07-19 02:00:36.702 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:00:36.702 [info] [GitHub Authentication] Got 3 sessions for ...
+2026-07-19 02:00:36.703 [info] [Microsoft Authentication] [getSessions] [499b84ac-1321-427f-aa17-267ca6975798/.default offline_access] starting
+2026-07-19 02:00:36.703 [info] [Microsoft Authentication] [getSessions] [499b84ac-1321-427f-aa17-267ca6975798/.default offline_access] returned 0 session(s)
+2026-07-19 02:00:36.725 [info] [GitHub Authentication] Getting sessions for read:user,repo,user:email,workflow...
+2026-07-19 02:00:36.725 [info] [GitHub Authentication] Got 2 sessions for read:user,repo,user:email,workflow...
+2026-07-19 02:00:36.802 [info] [GitHub Copilot Chat] AuthenticationService: firing onDidAuthenticationChange from handleAuthChangeEvent. Has token: true
+2026-07-19 02:00:36.802 [info] [GitHub Copilot Chat] copilot token sku: free_limited_copilot
+2026-07-19 02:00:36.802 [info] [GitHub Copilot Chat] ConversationFeature: Activating contributions
+2026-07-19 02:00:36.802 [info] [GitHub Copilot Chat] GitHub.vscode-pull-request-github extension is not yet activated.
+2026-07-19 02:00:36.813 [info] [GitHub Copilot Chat] Registering default platform agent...
+2026-07-19 02:00:36.814 [info] [GitHub Copilot Chat] BYOK: fetching known models list
+2026-07-19 02:00:36.814 [info] [GitHub Copilot Chat] ConversationFeature: onDidAuthenticationChange has token: true
+2026-07-19 02:00:36.815 [info] [GitHub Copilot Chat] [code-referencing] Public code references are enabled.
+2026-07-19 02:00:36.818 [info] [GitHub Copilot Chat] activationBlocker from 'conversationFeature' took for 3017ms
+2026-07-19 02:00:36.861 [info] [GitHub Copilot Chat] GithubAvailableEmbeddingTypesManager: Got embeddings. Primary: metis-1024-I16-Binary. Deprecated: 
+2026-07-19 02:00:36.865 [info] [GitHub Copilot Chat] WorkspaceChunkSearchService: using embedding type metis-1024-I16-Binary
+2026-07-19 02:00:36.893 [info] [GitHub Copilot Chat] BYOK: Copilot Chat known models list fetched successfully.
+2026-07-19 02:00:36.896 [info] [GitHub Copilot Chat] BYOK: registered 8 provider(s): ollama, anthropic, gemini, xai, openai, openrouter, azure, customoai
+2026-07-19 02:00:36.899 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:00:36.899 [info] [GitHub Authentication] Got 3 sessions for ...
+2026-07-19 02:00:36.902 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:00:36.902 [info] [GitHub Authentication] Got 3 sessions for ...
+2026-07-19 02:00:36.916 [info] [GitHub Copilot Chat] [CopilotCLIChatSessionContentProvider] listSessions took 18.845930999999837ms
+2026-07-19 02:00:36.919 [info] [GitHub Copilot Chat] [CopilotCLIChatSessionContentProvider] listSessions took 1.3410260000000562ms
+2026-07-19 02:00:36.927 [info] [GitHub Authentication] Getting sessions for read:user,repo,user:email,workflow...
+2026-07-19 02:00:36.927 [info] [GitHub Authentication] Got 2 sessions for read:user,repo,user:email,workflow...
+2026-07-19 02:00:37.041 [info] [GitHub Authentication] FetcherService: Node fetch failed with status: 429 Too Many Requests
+2026-07-19 02:00:37.044 [info] [GitHub Authentication] Unable to resolve optional EDU details. Status: 429 Too Many Requests
+2026-07-19 02:00:37.193 [info] [GitHub Authentication] FetcherService: Node fetch failed with status: 429 Too Many Requests
+2026-07-19 02:00:37.193 [info] [GitHub Authentication] Unable to resolve optional EDU details. Status: 429 Too Many Requests
+2026-07-19 02:00:37.433 [info] [Git] > git rev-parse --show-toplevel [2ms]
+2026-07-19 02:00:37.433 [info] [Git] fatal: not a git repository (or any of the parent directories): .git
+2026-07-19 02:00:37.435 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:00:37.435 [info] [GitHub Authentication] Got 3 sessions for ...
+2026-07-19 02:00:37.436 [info] [GitHub Authentication] Getting sessions for read:user,repo,user:email,workflow...
+2026-07-19 02:00:37.436 [info] [GitHub Authentication] Got 2 sessions for read:user,repo,user:email,workflow...
+2026-07-19 02:00:37.788 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:00:37.788 [info] [GitHub Authentication] Got 3 sessions for ...
+2026-07-19 02:00:37.789 [info] [GitHub Authentication] Getting sessions for read:user,repo,user:email,workflow...
+2026-07-19 02:00:37.790 [info] [GitHub Authentication] Got 2 sessions for read:user,repo,user:email,workflow...
+2026-07-19 02:00:37.809 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:00:37.809 [info] [GitHub Authentication] Got 3 sessions for ...
+2026-07-19 02:00:37.809 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:00:37.809 [info] [GitHub Authentication] Got 1 sessions for ...
+2026-07-19 02:00:37.809 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:00:37.809 [info] [GitHub Authentication] Got 3 sessions for ...
+2026-07-19 02:00:37.811 [info] [GitHub Authentication] Getting sessions for read:user,repo,user:email,workflow...
+2026-07-19 02:00:37.811 [info] [GitHub Authentication] Got 2 sessions for read:user,repo,user:email,workflow...
+2026-07-19 02:00:37.935 [info] [GitHub Copilot Chat] Fetched model metadata in 3984ms d75e6209-59dc-4b2f-be01-005fed34ac53
+2026-07-19 02:00:38.286 [info] [GitHub Copilot Chat] Latest entry: ccreq:latest.copilotmd
+2026-07-19 02:00:38.288 [info] [GitHub Copilot Chat] ccreq:93580a5f.copilotmd | markdown
+2026-07-19 02:00:54.320 [info] [Main] update#setState checking for updates
+2026-07-19 02:00:54.427 [info] [Main] update#setState available for download
+2026-07-19 02:01:20.951 [info] [Shared] Extension signature verification result for openai.chatgpt: Success. Internal Code: 0. Executed: true. Duration: 1679ms.
+2026-07-19 02:01:27.075 [info] [Shared] Extracted extension to file:///home/sahon/.vscode/extensions/openai.chatgpt-26.5715.31925-linux-x64: openai.chatgpt
+2026-07-19 02:01:27.450 [info] [Shared] Renamed to /home/sahon/.vscode/extensions/openai.chatgpt-26.5715.31925-linux-x64
+2026-07-19 02:01:27.513 [info] [Shared] Marked extension as removed openai.chatgpt-26.5707.91948-linux-x64
+2026-07-19 02:01:27.564 [info] [Shared] Extension installed successfully: openai.chatgpt vscode-userdata:/home/sahon/.vscode/extensions/extensions.json
+2026-07-19 02:03:34.570 [error] [Codex] [CodexMcpConnection] cli: message="codex_models_manager::manager: failed to refresh available models: unexpected status 401 Unauthorized: Your authentication token has been invalidated. Please try signing in again., url: https://chatgpt.com/backend-api/codex/models?client_version=0.144.5, cf-ray: a1d4172c0bd3d977-DAC, auth error: 401, auth error code: token_invalidated"
+2026-07-19 02:06:34.864 [error] [Codex] [CodexMcpConnection] cli: message="codex_models_manager::manager: failed to refresh available models: unexpected status 401 Unauthorized: Your authentication token has been invalidated. Please try signing in again., url: https://chatgpt.com/backend-api/codex/models?client_version=0.144.5, cf-ray: a1d41b92beb7f7a2-DAC, auth error: 401, auth error code: token_invalidated"
+2026-07-19 02:09:35.140 [error] [Codex] [CodexMcpConnection] cli: message="codex_models_manager::manager: failed to refresh available models: unexpected status 401 Unauthorized: Your authentication token has been invalidated. Please try signing in again., url: https://chatgpt.com/backend-api/codex/models?client_version=0.144.5, cf-ray: a1d41ff99d8df14e-DAC, auth error: 401, auth error code: token_invalidated"
+2026-07-19 02:12:35.482 [error] [Codex] [CodexMcpConnection] cli: message="codex_models_manager::manager: failed to refresh available models: unexpected status 401 Unauthorized: Your authentication token has been invalidated. Please try signing in again., url: https://chatgpt.com/backend-api/codex/models?client_version=0.144.5, cf-ray: a1d424605a2af7a2-DAC, auth error: 401, auth error code: token_invalidated"
+2026-07-19 02:13:53.989 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:13:53.989 [info] [GitHub Authentication] Got 3 sessions for ...
+2026-07-19 02:13:53.990 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:13:53.990 [info] [GitHub Authentication] Got 1 sessions for ...
+2026-07-19 02:13:55.246 [info] [GitHub Copilot Chat] [CopilotCLIChatSessionContentProvider] listSessions took 14.24207799998112ms
+2026-07-19 02:14:02.727 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:14:02.727 [info] [GitHub Authentication] Got 3 sessions for ...
+2026-07-19 02:14:02.728 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:14:02.728 [info] [GitHub Authentication] Got 1 sessions for ...
+2026-07-19 02:14:03.151 [info] [GitHub Copilot Chat] [CopilotCLIChatSessionContentProvider] listSessions took 10.484983999980614ms
+2026-07-19 02:14:05.852 [error] [Window] An unknown error occurred. Please consult the log for more details.
+2026-07-19 02:14:10.428 [info] [GitHub Copilot Chat] Fetched model metadata in 1063ms 4b30589f-2f31-47ed-8eda-b290e7aebb4d
+2026-07-19 02:14:10.759 [info] [GitHub Copilot Chat] ccreq:1c1af7ac.copilotmd | markdown
+2026-07-19 02:14:34.582 [info] [MCP: idea] Starting server idea
+2026-07-19 02:14:34.583 [info] [MCP: idea] Connection state: Starting
+2026-07-19 02:14:34.586 [info] [MCP: idea] Starting server from LocalProcess extension host
+2026-07-19 02:14:34.590 [info] [MCP: idea] Connection state: Running
+2026-07-19 02:14:34.663 [info] [MCP: idea] 404 status sending message to http://127.0.0.1:5000/sse, will attempt to fall back to legacy SSE
+2026-07-19 02:14:34.675 [info] [MCP: idea] Connection state: Error 404 status connecting to http://127.0.0.1:5000/sse as SSE: {"error":"Not found"}
+2026-07-19 02:14:35.768 [warning] [Window] Authentication provider https://mcp.facebook.com/devtools https://mcp.facebook.com/devtools was not declared in the Extension Manifest.
+2026-07-19 02:14:35.774 [info] [Auth: mcp.facebook.com] Getting sessions for scopes: all
+2026-07-19 02:14:35.774 [info] [Auth: mcp.facebook.com] Getting sessions for scopes: all
+2026-07-19 02:14:35.775 [info] [Auth: mcp.facebook.com] Getting sessions for scopes: all
+2026-07-19 02:14:35.779 [info] [Auth: mcp.facebook.com] Getting sessions for scopes: developer_tools_mcp_app_read developer_tools_mcp_app_management
+2026-07-19 02:14:35.779 [info] [Auth: mcp.facebook.com] Found 0 sessions for scopes: developer_tools_mcp_app_read developer_tools_mcp_app_management
+2026-07-19 02:14:35.926 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:14:35.926 [info] [GitHub Authentication] Got 3 sessions for ...
+2026-07-19 02:14:35.930 [info] [GitHub Authentication] Getting sessions for read:user,repo,user:email,workflow...
+2026-07-19 02:14:35.930 [info] [GitHub Authentication] Got 2 sessions for read:user,repo,user:email,workflow...
+2026-07-19 02:14:36.054 [info] [GitHub Copilot Chat] message 0 returned. finish reason: [stop]
+2026-07-19 02:14:36.060 [info] [GitHub Copilot Chat] request done: requestId: [4f2cc9ba-20f8-4919-99e7-a12a61e67eb1] model deployment ID: []
+2026-07-19 02:14:36.063 [info] [GitHub Copilot Chat] ccreq:77d29511.copilotmd | success | gpt-4o-mini-2024-07-18 | 1056ms | [title]
+2026-07-19 02:14:36.959 [error] [Window] [Extension Host] Failed to fetch remote embeddings cache from https://embeddings.vscode-cdn.net/text-3-small/v1.120/tools/latest.txt
+2026-07-19 02:14:36.962 [error] [Window] [Extension Host] Response status: 404, status text: 
+2026-07-19 02:14:37.217 [info] [GitHub Copilot Chat] message 0 returned. finish reason: [stop]
+2026-07-19 02:14:37.223 [info] [GitHub Copilot Chat] request done: requestId: [53ee27af-7ffa-4f3d-b3c2-d2848998b01a] model deployment ID: []
+2026-07-19 02:14:37.227 [info] [GitHub Copilot Chat] ccreq:86a68db6.copilotmd | success | gpt-4o-mini-2024-07-18 | 1283ms | [progressMessages]
+2026-07-19 02:14:37.386 [info] [GitHub Copilot Chat] message 0 returned. finish reason: [stop]
+2026-07-19 02:14:37.393 [info] [GitHub Copilot Chat] request done: requestId: [7a887305-2af5-40d6-b16c-0c8fe03ee7e3] model deployment ID: []
+2026-07-19 02:14:37.397 [info] [GitHub Copilot Chat] ccreq:6d49bf41.copilotmd | success | gpt-4o-mini-2024-07-18 | 1459ms | [progressMessages]
+2026-07-19 02:14:37.680 [error] [Window] [Extension Host] Failed to fetch remote embeddings cache from https://embeddings.vscode-cdn.net/text-3-small/v1.120/tools/core.json
+2026-07-19 02:14:37.681 [error] [Window] [Extension Host] Response status: 404, status text: 
+2026-07-19 02:14:37.783 [warning] [GitHub Copilot Chat] [virtual-tools] Had to drop 10 tools due to limit constraints
+2026-07-19 02:14:37.784 [warning] [GitHub Copilot Chat] [virtual-tools] Had to drop 4 tools due to limit constraints
+2026-07-19 02:14:37.784 [warning] [GitHub Copilot Chat] [virtual-tools] Had to drop 4 tools due to limit constraints
+2026-07-19 02:14:37.784 [warning] [GitHub Copilot Chat] [virtual-tools] Had to drop 4 tools due to limit constraints
+2026-07-19 02:14:37.785 [warning] [GitHub Copilot Chat] [virtual-tools] Had to drop 5 tools due to limit constraints
+2026-07-19 02:14:37.785 [warning] [GitHub Copilot Chat] [virtual-tools] Had to drop 5 tools due to limit constraints
+2026-07-19 02:14:37.785 [warning] [GitHub Copilot Chat] [virtual-tools] Had to drop 5 tools due to limit constraints
+2026-07-19 02:14:37.785 [warning] [GitHub Copilot Chat] [virtual-tools] Had to drop 5 tools due to limit constraints
+2026-07-19 02:14:37.785 [warning] [GitHub Copilot Chat] [virtual-tools] Had to drop 5 tools due to limit constraints
+2026-07-19 02:14:37.785 [warning] [GitHub Copilot Chat] [virtual-tools] Had to drop 5 tools due to limit constraints
+2026-07-19 02:14:37.786 [warning] [GitHub Copilot Chat] [virtual-tools] Had to drop 11 tools due to limit constraints
+2026-07-19 02:14:46.380 [info] [GitHub Copilot Chat] [ToolCallingLoop] Stop hook result: shouldContinue=false, reasons=undefined
+2026-07-19 02:15:35.756 [error] [Codex] [CodexMcpConnection] cli: message="codex_models_manager::manager: failed to refresh available models: unexpected status 401 Unauthorized: Your authentication token has been invalidated. Please try signing in again., url: https://chatgpt.com/backend-api/codex/models?client_version=0.144.5, cf-ray: a1d428c76cedaf36-DAC, auth error: 401, auth error code: token_invalidated"
+2026-07-19 02:17:29.943 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:17:29.943 [info] [GitHub Authentication] Got 3 sessions for ...
+2026-07-19 02:17:29.945 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:17:29.945 [info] [GitHub Authentication] Got 1 sessions for ...
+2026-07-19 02:17:30.381 [info] [GitHub Copilot Chat] [CopilotCLIChatSessionContentProvider] listSessions took 11.738331999978982ms
+2026-07-19 02:17:32.132 [info] [Git] > git rev-parse --show-toplevel [2ms]
+2026-07-19 02:17:32.133 [info] [Git] fatal: not a git repository (or any of the parent directories): .git
+2026-07-19 02:17:37.061 [info] [Git] > git rev-parse --show-toplevel [5ms]
+2026-07-19 02:17:37.061 [info] [Git] fatal: not a git repository (or any of the parent directories): .git
+2026-07-19 02:17:37.106 [info] [Extension Host] ExtensionService#_doActivateExtension vscode.extension-editing, startup: false, activationEvent: 'onLanguage:json'
+2026-07-19 02:17:37.127 [info] [Extension Host] ExtensionService#_doActivateExtension vscode.npm, startup: false, activationEvent: 'onLanguage:json'
+2026-07-19 02:18:36.050 [error] [Codex] [CodexMcpConnection] cli: message="codex_models_manager::manager: failed to refresh available models: unexpected status 401 Unauthorized: Your authentication token has been invalidated. Please try signing in again., url: https://chatgpt.com/backend-api/codex/models?client_version=0.144.5, cf-ray: a1d42d2e1a54f5a8-DAC, auth error: 401, auth error code: token_invalidated"
+2026-07-19 02:21:36.376 [error] [Codex] [CodexMcpConnection] cli: message="codex_models_manager::manager: failed to refresh available models: unexpected status 401 Unauthorized: Your authentication token has been invalidated. Please try signing in again., url: https://chatgpt.com/backend-api/codex/models?client_version=0.144.5, cf-ray: a1d4319508475faa-DAC, auth error: 401, auth error code: token_invalidated"
+2026-07-19 02:21:39.321 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:21:39.321 [info] [GitHub Authentication] Got 3 sessions for ...
+2026-07-19 02:21:39.322 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:21:39.322 [info] [GitHub Authentication] Got 1 sessions for ...
+2026-07-19 02:21:39.744 [info] [GitHub Copilot Chat] [CopilotCLIChatSessionContentProvider] listSessions took 4.982500000158325ms
+2026-07-19 02:22:02.940 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:22:02.940 [info] [GitHub Authentication] Got 3 sessions for ...
+2026-07-19 02:22:02.940 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:22:02.940 [info] [GitHub Authentication] Got 1 sessions for ...
+2026-07-19 02:22:03.357 [info] [GitHub Copilot Chat] [CopilotCLIChatSessionContentProvider] listSessions took 11.833828000118956ms
+2026-07-19 02:22:53.206 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:22:53.206 [info] [GitHub Authentication] Got 3 sessions for ...
+2026-07-19 02:22:53.207 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:22:53.207 [info] [GitHub Authentication] Got 1 sessions for ...
+2026-07-19 02:22:53.629 [info] [GitHub Copilot Chat] [CopilotCLIChatSessionContentProvider] listSessions took 12.276672000065446ms
+2026-07-19 02:24:00.538 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:24:00.538 [info] [GitHub Authentication] Got 3 sessions for ...
+2026-07-19 02:24:00.538 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:24:00.538 [info] [GitHub Authentication] Got 1 sessions for ...
+2026-07-19 02:24:00.952 [info] [GitHub Copilot Chat] [CopilotCLIChatSessionContentProvider] listSessions took 1.9140439999755472ms
+2026-07-19 02:24:08.428 [info] [Git] > git rev-parse --show-toplevel [2ms]
+2026-07-19 02:24:08.428 [info] [Git] fatal: not a git repository (or any of the parent directories): .git
+2026-07-19 02:24:08.600 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:24:08.600 [info] [GitHub Authentication] Got 3 sessions for ...
+2026-07-19 02:24:08.620 [info] [GitHub Authentication] Getting sessions for read:user,repo,user:email,workflow...
+2026-07-19 02:24:08.620 [info] [GitHub Authentication] Got 2 sessions for read:user,repo,user:email,workflow...
+2026-07-19 02:24:36.691 [error] [Codex] [CodexMcpConnection] cli: message="codex_models_manager::manager: failed to refresh available models: unexpected status 401 Unauthorized: Your authentication token has been invalidated. Please try signing in again., url: https://chatgpt.com/backend-api/codex/models?client_version=0.144.5, cf-ray: a1d435fc0d431652-DAC, auth error: 401, auth error code: token_invalidated"
+2026-07-19 02:24:37.530 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:24:37.530 [info] [GitHub Authentication] Got 3 sessions for ...
+2026-07-19 02:24:37.531 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:24:37.531 [info] [GitHub Authentication] Got 1 sessions for ...
+2026-07-19 02:24:37.959 [info] [GitHub Copilot Chat] [CopilotCLIChatSessionContentProvider] listSessions took 23.63574400008656ms
+2026-07-19 02:24:39.626 [info] [Auth: mcp.facebook.com] Getting sessions for scopes: developer_tools_mcp_app_read developer_tools_mcp_app_management
+2026-07-19 02:24:39.626 [info] [Auth: mcp.facebook.com] Found 0 sessions for scopes: developer_tools_mcp_app_read developer_tools_mcp_app_management
+2026-07-19 02:24:39.647 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:24:39.647 [info] [GitHub Authentication] Got 3 sessions for ...
+2026-07-19 02:24:39.648 [info] [GitHub Authentication] Getting sessions for read:user,repo,user:email,workflow...
+2026-07-19 02:24:39.648 [info] [GitHub Authentication] Got 2 sessions for read:user,repo,user:email,workflow...
+2026-07-19 02:24:39.651 [info] [GitHub Copilot Chat] Logged in as zombiecoderbd
+2026-07-19 02:24:40.339 [info] [GitHub Copilot Chat] Got Copilot token for zombiecoderbd
+2026-07-19 02:24:40.339 [info] [GitHub Copilot Chat] Copilot Chat: 0.48.1, VS Code: 1.120.0
+2026-07-19 02:24:40.354 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:24:40.354 [info] [GitHub Authentication] Got 3 sessions for ...
+2026-07-19 02:24:40.355 [info] [Microsoft Authentication] [getSessions] [499b84ac-1321-427f-aa17-267ca6975798/.default offline_access] starting
+2026-07-19 02:24:40.355 [info] [Microsoft Authentication] [getSessions] [499b84ac-1321-427f-aa17-267ca6975798/.default offline_access] returned 0 session(s)
+2026-07-19 02:24:40.355 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:24:40.355 [info] [GitHub Authentication] Got 3 sessions for ...
+2026-07-19 02:24:40.356 [info] [GitHub Authentication] Getting sessions for read:user,repo,user:email,workflow...
+2026-07-19 02:24:40.356 [info] [GitHub Authentication] Got 2 sessions for read:user,repo,user:email,workflow...
+2026-07-19 02:24:40.364 [info] [GitHub Copilot Chat] AuthenticationService: firing onDidAuthenticationChange from handleAuthChangeEvent. Has token: true
+2026-07-19 02:24:40.364 [info] [GitHub Copilot Chat] copilot token sku: free_limited_copilot
+2026-07-19 02:24:40.364 [info] [GitHub Copilot Chat] ConversationFeature: onDidAuthenticationChange has token: true
+2026-07-19 02:24:40.364 [info] [GitHub Copilot Chat] [code-referencing] Public code references are enabled.
+2026-07-19 02:24:40.370 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:24:40.370 [info] [GitHub Authentication] Got 3 sessions for ...
+2026-07-19 02:24:40.371 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:24:40.372 [info] [GitHub Authentication] Got 3 sessions for ...
+2026-07-19 02:24:40.373 [info] [GitHub Authentication] Getting sessions for read:user,repo,user:email,workflow...
+2026-07-19 02:24:40.373 [info] [GitHub Authentication] Got 2 sessions for read:user,repo,user:email,workflow...
+2026-07-19 02:24:41.538 [info] [GitHub Copilot Chat] Fetched model metadata in 1901ms b4e90611-63b9-4a9f-abd2-12b6a2baa029
+2026-07-19 02:24:42.119 [info] [GitHub Copilot Chat] ccreq:ab3d1ba8.copilotmd | markdown
+2026-07-19 02:24:42.280 [warning] [GitHub Copilot Chat] [virtual-tools] Had to drop 10 tools due to limit constraints
+2026-07-19 02:24:42.282 [warning] [GitHub Copilot Chat] [virtual-tools] Had to drop 4 tools due to limit constraints
+2026-07-19 02:24:42.282 [warning] [GitHub Copilot Chat] [virtual-tools] Had to drop 4 tools due to limit constraints
+2026-07-19 02:24:42.282 [warning] [GitHub Copilot Chat] [virtual-tools] Had to drop 5 tools due to limit constraints
+2026-07-19 02:24:42.283 [warning] [GitHub Copilot Chat] [virtual-tools] Had to drop 5 tools due to limit constraints
+2026-07-19 02:24:42.284 [warning] [GitHub Copilot Chat] [virtual-tools] Had to drop 5 tools due to limit constraints
+2026-07-19 02:24:42.284 [warning] [GitHub Copilot Chat] [virtual-tools] Had to drop 5 tools due to limit constraints
+2026-07-19 02:24:42.284 [warning] [GitHub Copilot Chat] [virtual-tools] Had to drop 5 tools due to limit constraints
+2026-07-19 02:24:42.284 [warning] [GitHub Copilot Chat] [virtual-tools] Had to drop 5 tools due to limit constraints
+2026-07-19 02:24:42.284 [warning] [GitHub Copilot Chat] [virtual-tools] Had to drop 5 tools due to limit constraints
+2026-07-19 02:24:42.284 [warning] [GitHub Copilot Chat] [virtual-tools] Had to drop 11 tools due to limit constraints
+2026-07-19 02:24:42.294 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:24:42.294 [info] [GitHub Authentication] Got 3 sessions for ...
+2026-07-19 02:24:42.476 [info] [GitHub Authentication] Getting sessions for read:user,repo,user:email,workflow...
+2026-07-19 02:24:42.476 [info] [GitHub Authentication] Got 2 sessions for read:user,repo,user:email,workflow...
+2026-07-19 02:24:48.934 [info] [Extension Host] ExtensionService#_doActivateExtension vscode.markdown-language-features, startup: false, activationEvent: 'onLanguage:markdown'
+2026-07-19 02:25:00.530 [info] [TypeScript] Starting TS Server
+2026-07-19 02:25:00.530 [info] [TypeScript] Using tsserver from: /usr/share/code/resources/app/extensions/node_modules/typescript/lib/tsserver.js
+2026-07-19 02:25:00.530 [info] [TypeScript] <syntax> Forking...
+2026-07-19 02:25:00.530 [info] [TypeScript] <syntax> Starting...
+2026-07-19 02:25:00.530 [info] [TypeScript] <semantic> Forking...
+2026-07-19 02:25:00.530 [info] [TypeScript] <semantic> Starting...
+2026-07-19 02:25:02.404 [info] [GitHub Copilot Chat] message 0 returned. finish reason: [stop]
+2026-07-19 02:25:02.406 [info] [GitHub Copilot Chat] request done: requestId: [436c2144-cb23-4810-a37a-89787d2a3351] model deployment ID: []
+2026-07-19 02:25:02.409 [info] [GitHub Copilot Chat] ccreq:15de5a80.copilotmd | success | gpt-4o-mini -> gpt-4o-mini-2024-07-18 | 2255ms | [copilotLanguageModelWrapper]
+2026-07-19 02:25:39.026 [info] [GitHub Copilot Chat] message 0 returned. finish reason: [stop]
+2026-07-19 02:25:39.029 [info] [GitHub Copilot Chat] request done: requestId: [737f0dcc-efc6-46c9-a17d-07ab7101428a] model deployment ID: []
+2026-07-19 02:25:39.032 [info] [GitHub Copilot Chat] ccreq:e335fd54.copilotmd | success | gpt-4o-mini -> gpt-4o-mini-2024-07-18 | 1025ms | [copilotLanguageModelWrapper]
+2026-07-19 02:25:40.681 [info] [GitHub Copilot Chat] message 0 returned. finish reason: [stop]
+2026-07-19 02:25:40.685 [info] [GitHub Copilot Chat] request done: requestId: [822f098a-7cab-4a7f-88c0-346e15e22475] model deployment ID: []
+2026-07-19 02:25:40.689 [info] [GitHub Copilot Chat] ccreq:a3b537b6.copilotmd | success | gpt-4o-mini -> gpt-4o-mini-2024-07-18 | 1381ms | [copilotLanguageModelWrapper]
+2026-07-19 02:25:44.671 [warning] [GitHub Copilot Chat] Error compiling input schema for tool run_in_terminal: Error: strict mode: unknown keyword: "enumDescriptions"
+2026-07-19 02:25:44.676 [info] [Terminal] RunInTerminalTool: Command rewritten by AFe: Prepended with a space to exclude from shell history []
+2026-07-19 02:25:44.841 [info] [Terminal] RunInTerminalTool#CommandLineFileWriteAnalyzer: File writes detected [[]]
+2026-07-19 02:25:45.082 [info] [Terminal] ToolTerminalCreator#createTerminal: Waiting 4997ms for shell integration []
+2026-07-19 02:25:45.082 [info] [Terminal] ToolTerminalCreator#_waitForShellIntegration: base 4997ms, effective 4997ms, screenReaderOptimized=false []
+2026-07-19 02:25:45.261 [info] [Terminal] ToolTerminalCreator#_waitForShellIntegration: Rich SI available eventually []
+2026-07-19 02:25:45.261 [info] [Terminal] ToolTerminalCreator#_waitForShellIntegration: Promise complete, disposing store []
+2026-07-19 02:25:45.262 [info] [Terminal] ToolTerminalCreator#createTerminal: Waiting up to 2s for PromptInputModel state to change []
+2026-07-19 02:25:45.277 [info] [Terminal] RunInTerminalTool: Using `rich` execute strategy for command ` wc -l /home/sahon/Downloads/c/api.js && tail -100 /home/sahon/Downloads/c/api.js` []
+2026-07-19 02:25:45.315 [info] [Terminal] trackIdleOnPrompt: State Initial → Executing (sequence C) []
+2026-07-19 02:25:45.328 [info] [Terminal] trackIdleOnPrompt: State Executing → PromptAfterExecuting (sequence A after executing) []
+2026-07-19 02:25:46.328 [info] [Terminal] trackIdleOnPrompt: Idle scheduler fired, completing (dataEvents=6) []
+2026-07-19 02:25:46.334 [info] [Terminal] RunInTerminalTool: Finished `rich` execute strategy with exitCode `undefined`, result.length `2576`, error `undefined` []
+2026-07-19 02:25:46.335 [info] [Terminal] RunInTerminalTool: shellIntegrationQuality=rich at banner decision time []
+2026-07-19 02:25:56.373 [warning] [Terminal] Shell integration failed to add capabilities within 10 seconds []
+2026-07-19 02:25:56.598 [error] [Window] An unknown error occurred. Please consult the log for more details.
+2026-07-19 02:26:02.404 [info] [Terminal] RunInTerminalTool: Command rewritten by AFe: Prepended with a space to exclude from shell history []
+2026-07-19 02:26:02.426 [info] [Terminal] RunInTerminalTool#CommandLineFileWriteAnalyzer: File writes detected [[]]
+2026-07-19 02:26:02.430 [info] [Terminal] RunInTerminalTool: Using `rich` execute strategy for command ` grep -n 'tcpServer\|udsServer\|init()\|function init' /home/sahon/Downloads/c/api.js | head -30` []
+2026-07-19 02:26:02.486 [info] [Terminal] trackIdleOnPrompt: State Initial → Executing (sequence C) []
+2026-07-19 02:26:02.495 [info] [Terminal] trackIdleOnPrompt: State Executing → PromptAfterExecuting (sequence A after executing) []
+2026-07-19 02:26:03.495 [info] [Terminal] trackIdleOnPrompt: Idle scheduler fired, completing (dataEvents=6) []
+2026-07-19 02:26:03.497 [info] [Terminal] RunInTerminalTool: Finished `rich` execute strategy with exitCode `undefined`, result.length `632`, error `undefined` []
+2026-07-19 02:26:03.498 [info] [Terminal] RunInTerminalTool: shellIntegrationQuality=rich at banner decision time []
+2026-07-19 02:26:13.512 [warning] [Terminal] Shell integration failed to add capabilities within 10 seconds []
+2026-07-19 02:26:28.143 [info] [GitHub Copilot Chat] message 0 returned. finish reason: [stop]
+2026-07-19 02:26:28.146 [info] [GitHub Copilot Chat] request done: requestId: [71faaf8d-1581-434e-a97a-19692f556957] model deployment ID: []
+2026-07-19 02:26:28.147 [info] [GitHub Copilot Chat] ccreq:2d4c27dd.copilotmd | success | gpt-4o-mini -> gpt-4o-mini-2024-07-18 | 1350ms | [copilotLanguageModelWrapper]
+2026-07-19 02:27:17.182 [info] [Git] > git rev-parse --show-toplevel [2ms]
+2026-07-19 02:27:17.182 [info] [Git] fatal: not a git repository (or any of the parent directories): .git
+2026-07-19 02:27:36.964 [error] [Codex] [CodexMcpConnection] cli: message="codex_models_manager::manager: failed to refresh available models: unexpected status 401 Unauthorized: Your authentication token has been invalidated. Please try signing in again., url: https://chatgpt.com/backend-api/codex/models?client_version=0.144.5, cf-ray: a1d43a62ffc22fb9-DAC, auth error: 401, auth error code: token_invalidated"
+2026-07-19 02:27:39.689 [info] [Terminal] RunInTerminalTool: Command rewritten by AFe: Prepended with a space to exclude from shell history []
+2026-07-19 02:27:39.709 [info] [Terminal] RunInTerminalTool#CommandLineFileWriteAnalyzer: File writes detected [[]]
+2026-07-19 02:27:39.713 [info] [Terminal] RunInTerminalTool: Using `rich` execute strategy for command ` grep -n 'SSOT_LOADED\|cached: false' /home/sahon/Downloads/c/api.js` []
+2026-07-19 02:27:39.929 [info] [Terminal] trackIdleOnPrompt: State Initial → Executing (sequence C) []
+2026-07-19 02:27:39.939 [info] [Terminal] trackIdleOnPrompt: State Executing → PromptAfterExecuting (sequence A after executing) []
+2026-07-19 02:27:40.230 [info] [GitHub Copilot Chat] message 0 returned. finish reason: [stop]
+2026-07-19 02:27:40.233 [info] [GitHub Copilot Chat] request done: requestId: [ccb0f8cf-2ab9-4da2-a290-fd518a82f5ef] model deployment ID: []
+2026-07-19 02:27:40.235 [info] [GitHub Copilot Chat] ccreq:1080f7e9.copilotmd | success | gpt-4o-mini -> gpt-4o-mini-2024-07-18 | 1806ms | [copilotLanguageModelWrapper]
+2026-07-19 02:27:40.940 [info] [Terminal] trackIdleOnPrompt: Idle scheduler fired, completing (dataEvents=6) []
+2026-07-19 02:27:40.942 [info] [Terminal] RunInTerminalTool: Finished `rich` execute strategy with exitCode `undefined`, result.length `99`, error `undefined` []
+2026-07-19 02:27:40.942 [info] [Terminal] RunInTerminalTool: shellIntegrationQuality=rich at banner decision time []
+2026-07-19 02:27:45.920 [info] [GitHub Copilot Chat] message 0 returned. finish reason: [stop]
+2026-07-19 02:27:45.923 [info] [GitHub Copilot Chat] request done: requestId: [93fc613e-0c70-4373-9dc7-b0f1342c3d76] model deployment ID: []
+2026-07-19 02:27:45.924 [info] [GitHub Copilot Chat] ccreq:76310339.copilotmd | success | gpt-4o-mini -> gpt-4o-mini-2024-07-18 | 1200ms | [copilotLanguageModelWrapper]
+2026-07-19 02:27:50.961 [warning] [Terminal] Shell integration failed to add capabilities within 10 seconds []
+2026-07-19 02:27:59.154 [info] [GitHub Copilot Chat] message 0 returned. finish reason: [stop]
+2026-07-19 02:27:59.158 [info] [GitHub Copilot Chat] request done: requestId: [4759dac4-cd77-4908-bd39-21a3f2d253a3] model deployment ID: []
+2026-07-19 02:27:59.159 [info] [GitHub Copilot Chat] ccreq:603e1440.copilotmd | success | gpt-4o-mini -> gpt-4o-mini-2024-07-18 | 886ms | [copilotLanguageModelWrapper]
+2026-07-19 02:28:06.391 [info] [GitHub Copilot Chat] message 0 returned. finish reason: [stop]
+2026-07-19 02:28:06.393 [info] [GitHub Copilot Chat] request done: requestId: [3c1dbe0b-657e-4802-9881-280663bb6de2] model deployment ID: []
+2026-07-19 02:28:06.394 [info] [GitHub Copilot Chat] ccreq:ec78974f.copilotmd | success | gpt-4o-mini -> gpt-4o-mini-2024-07-18 | 903ms | [copilotLanguageModelWrapper]
+2026-07-19 02:28:09.425 [info] [GitHub Copilot Chat] TypeScript server plugin activated.
+2026-07-19 02:28:09.429 [info] [GitHub Copilot Chat] Registered TypeScript context provider with Copilot inline completions.
+2026-07-19 02:29:22.386 [info] [Terminal] RunInTerminalTool: Command rewritten by AFe: Prepended with a space to exclude from shell history []
+2026-07-19 02:29:22.405 [info] [Terminal] RunInTerminalTool#CommandLineFileWriteAnalyzer: File writes detected [[]]
+2026-07-19 02:29:22.409 [info] [Terminal] RunInTerminalTool: Using `rich` execute strategy for command ` sed -n '12620,12780p' /home/sahon/Downloads/c/api.js | cat -n` []
+2026-07-19 02:29:22.543 [info] [Terminal] trackIdleOnPrompt: State Initial → Executing (sequence C) []
+2026-07-19 02:29:22.585 [info] [Terminal] trackIdleOnPrompt: State Executing → PromptAfterExecuting (sequence A after executing) []
+2026-07-19 02:29:23.585 [info] [Terminal] trackIdleOnPrompt: Idle scheduler fired, completing (dataEvents=6) []
+2026-07-19 02:29:23.590 [info] [Terminal] RunInTerminalTool: Finished `rich` execute strategy with exitCode `undefined`, result.length `7069`, error `undefined` []
+2026-07-19 02:29:23.592 [info] [Terminal] RunInTerminalTool: shellIntegrationQuality=rich at banner decision time []
+2026-07-19 02:29:33.845 [warning] [Terminal] Shell integration failed to add capabilities within 10 seconds []
+2026-07-19 02:29:37.211 [info] [Terminal] RunInTerminalTool: Command rewritten by AFe: Prepended with a space to exclude from shell history []
+2026-07-19 02:29:37.228 [info] [Terminal] RunInTerminalTool#CommandLineFileWriteAnalyzer: File writes detected [[]]
+2026-07-19 02:29:37.231 [info] [Terminal] RunInTerminalTool: Using `rich` execute strategy for command ` grep -n 'const tryListen\|tcpServer.listen\|^  }$\|^  });$' /home/sahon/Downloads/c/api.js | head -10` []
+2026-07-19 02:29:37.437 [info] [Terminal] trackIdleOnPrompt: State Initial → Executing (sequence C) []
+2026-07-19 02:29:37.444 [info] [Terminal] trackIdleOnPrompt: State Executing → PromptAfterExecuting (sequence A after executing) []
+2026-07-19 02:29:38.507 [info] [Terminal] trackIdleOnPrompt: Idle scheduler fired, completing (dataEvents=6) []
+2026-07-19 02:29:38.508 [info] [Terminal] RunInTerminalTool: Finished `rich` execute strategy with exitCode `undefined`, result.length `81`, error `undefined` []
+2026-07-19 02:29:38.509 [info] [Terminal] RunInTerminalTool: shellIntegrationQuality=rich at banner decision time []
+2026-07-19 02:29:45.808 [info] [Terminal] RunInTerminalTool: Command rewritten by AFe: Prepended with a space to exclude from shell history []
+2026-07-19 02:29:45.828 [info] [Terminal] RunInTerminalTool#CommandLineFileWriteAnalyzer: File writes detected [[]]
+2026-07-19 02:29:45.831 [info] [Terminal] RunInTerminalTool: Using `rich` execute strategy for command ` grep -n 'tryListen\|PORT_FALLBACK\|Port binding with fallback' /home/sahon/Downloads/c/api.js` []
+2026-07-19 02:29:46.026 [info] [Terminal] trackIdleOnPrompt: State Initial → Executing (sequence C) []
+2026-07-19 02:29:46.033 [info] [Terminal] trackIdleOnPrompt: State Executing → PromptAfterExecuting (sequence A after executing) []
+2026-07-19 02:29:47.033 [info] [Terminal] trackIdleOnPrompt: Idle scheduler fired, completing (dataEvents=6) []
+2026-07-19 02:29:47.034 [info] [Terminal] RunInTerminalTool: Finished `rich` execute strategy with exitCode `undefined`, result.length `172`, error `undefined` []
+2026-07-19 02:29:47.035 [info] [Terminal] RunInTerminalTool: shellIntegrationQuality=rich at banner decision time []
+2026-07-19 02:29:49.479 [warning] [Terminal] Shell integration failed to add capabilities within 10 seconds []
+2026-07-19 02:29:56.195 [info] [Terminal] RunInTerminalTool: Command rewritten by AFe: Prepended with a space to exclude from shell history []
+2026-07-19 02:29:56.213 [info] [Terminal] RunInTerminalTool#CommandLineFileWriteAnalyzer: File writes detected [[]]
+2026-07-19 02:29:56.215 [info] [Terminal] RunInTerminalTool: Using `rich` execute strategy for command ` grep -n 'tryListen\|^  }$\|^  });$' /home/sahon/Downloads/c/api.js | grep -A5 '1264'` []
+2026-07-19 02:29:56.362 [info] [Terminal] trackIdleOnPrompt: State Initial → Executing (sequence C) []
+2026-07-19 02:29:56.370 [info] [Terminal] trackIdleOnPrompt: State Executing → PromptAfterExecuting (sequence A after executing) []
+2026-07-19 02:29:57.059 [warning] [Terminal] Shell integration failed to add capabilities within 10 seconds []
+2026-07-19 02:29:57.376 [info] [Terminal] trackIdleOnPrompt: Idle scheduler fired, completing (dataEvents=7) []
+2026-07-19 02:29:57.377 [info] [Terminal] RunInTerminalTool: Finished `rich` execute strategy with exitCode `undefined`, result.length `114`, error `undefined` []
+2026-07-19 02:29:57.378 [info] [Terminal] RunInTerminalTool: shellIntegrationQuality=rich at banner decision time []
+2026-07-19 02:30:08.414 [warning] [Terminal] Shell integration failed to add capabilities within 10 seconds []
+2026-07-19 02:30:37.298 [error] [Codex] [CodexMcpConnection] cli: message="codex_models_manager::manager: failed to refresh available models: unexpected status 401 Unauthorized: Your authentication token has been invalidated. Please try signing in again., url: https://chatgpt.com/backend-api/codex/models?client_version=0.144.5, cf-ray: a1d43ec9eadd540a-DAC, auth error: 401, auth error code: token_invalidated"
+2026-07-19 02:30:47.172 [info] [Terminal] RunInTerminalTool: Command rewritten by AFe: Prepended with a space to exclude from shell history []
+2026-07-19 02:30:47.191 [info] [Terminal] RunInTerminalTool#CommandLineFileWriteAnalyzer: File writes detected [[]]
+2026-07-19 02:30:47.194 [info] [Terminal] RunInTerminalTool: Using `rich` execute strategy for command ` grep -n '^async function init\|^}$' /home/sahon/Downloads/c/api.js | tail -10` []
+2026-07-19 02:30:47.797 [info] [Terminal] trackIdleOnPrompt: State Initial → Executing (sequence C) []
+2026-07-19 02:30:47.804 [info] [Terminal] trackIdleOnPrompt: State Executing → PromptAfterExecuting (sequence A after executing) []
+2026-07-19 02:30:48.804 [info] [Terminal] trackIdleOnPrompt: Idle scheduler fired, completing (dataEvents=6) []
+2026-07-19 02:30:48.805 [info] [Terminal] RunInTerminalTool: Finished `rich` execute strategy with exitCode `undefined`, result.length `79`, error `undefined` []
+2026-07-19 02:30:48.807 [info] [Terminal] RunInTerminalTool: shellIntegrationQuality=rich at banner decision time []
+2026-07-19 02:30:54.586 [info] [Terminal] RunInTerminalTool: Command rewritten by AFe: Prepended with a space to exclude from shell history []
+2026-07-19 02:30:54.614 [info] [Terminal] RunInTerminalTool#CommandLineFileWriteAnalyzer: File writes detected [[]]
+2026-07-19 02:30:54.618 [info] [Terminal] RunInTerminalTool: Using `rich` execute strategy for command ` grep -n '^async function init\|^}$' /home/sahon/Downloads/c/api.js | grep -E '127[0-9]{2}|124[0-9]{2}|128[0-9]{2}|136[0-9]{2}'` []
+2026-07-19 02:30:54.899 [info] [Terminal] trackIdleOnPrompt: State Initial → Executing (sequence C) []
+2026-07-19 02:30:54.906 [info] [Terminal] trackIdleOnPrompt: State Executing → PromptAfterExecuting (sequence A after executing) []
+2026-07-19 02:30:55.907 [info] [Terminal] trackIdleOnPrompt: Idle scheduler fired, completing (dataEvents=6) []
+2026-07-19 02:30:55.908 [info] [Terminal] RunInTerminalTool: Finished `rich` execute strategy with exitCode `undefined`, result.length `69`, error `undefined` []
+2026-07-19 02:30:55.910 [info] [Terminal] RunInTerminalTool: shellIntegrationQuality=rich at banner decision time []
+2026-07-19 02:30:58.825 [warning] [Terminal] Shell integration failed to add capabilities within 10 seconds []
+2026-07-19 02:31:01.563 [info] [Git] > git rev-parse --show-toplevel [5ms]
+2026-07-19 02:31:01.563 [info] [Git] fatal: not a git repository (or any of the parent directories): .git
+2026-07-19 02:31:01.699 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:31:01.699 [info] [GitHub Authentication] Got 3 sessions for ...
+2026-07-19 02:31:01.762 [info] [Extension Host] ExtensionService#_doActivateExtension vscode.html-language-features, startup: false, activationEvent: 'onLanguage:html'
+2026-07-19 02:31:01.955 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:31:01.955 [info] [GitHub Authentication] Got 1 sessions for ...
+2026-07-19 02:31:02.040 [info] [GitHub Copilot Chat] [CopilotCLIChatSessionContentProvider] listSessions took 25.40668399981223ms
+2026-07-19 02:31:06.073 [warning] [Terminal] Shell integration failed to add capabilities within 10 seconds []
+2026-07-19 02:31:06.586 [info] [GitHub Copilot Chat] [ToolCallingLoop] Stop hook result: shouldContinue=false, reasons=undefined
+2026-07-19 02:31:06.586 [info] [GitHub Copilot Chat] [ToolCallingLoop] Autopilot: model produced a text-only response, treating as done
+2026-07-19 02:31:25.657 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:31:25.658 [info] [GitHub Authentication] Got 3 sessions for ...
+2026-07-19 02:31:25.658 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:31:25.658 [info] [GitHub Authentication] Got 1 sessions for ...
+2026-07-19 02:31:26.073 [info] [GitHub Copilot Chat] [CopilotCLIChatSessionContentProvider] listSessions took 10.848805000074208ms
+2026-07-19 02:31:50.294 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:31:50.294 [info] [GitHub Authentication] Got 3 sessions for ...
+2026-07-19 02:31:50.295 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:31:50.295 [info] [GitHub Authentication] Got 1 sessions for ...
+2026-07-19 02:31:50.719 [info] [GitHub Copilot Chat] [CopilotCLIChatSessionContentProvider] listSessions took 10.313932999968529ms
+2026-07-19 02:31:51.844 [info] [Git] > git rev-parse --show-toplevel [5ms]
+2026-07-19 02:31:51.844 [info] [Git] fatal: not a git repository (or any of the parent directories): .git
+2026-07-19 02:32:34.836 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:32:34.837 [info] [GitHub Authentication] Got 3 sessions for ...
+2026-07-19 02:32:34.837 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:32:34.837 [info] [GitHub Authentication] Got 1 sessions for ...
+2026-07-19 02:32:35.230 [info] [GitHub Copilot Chat] [CopilotCLIChatSessionContentProvider] listSessions took 1.4539540000259876ms
+2026-07-19 02:32:45.472 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:32:45.472 [info] [GitHub Authentication] Got 3 sessions for ...
+2026-07-19 02:32:45.677 [info] [GitHub Copilot Chat] [CopilotCLIChatSessionContentProvider] listSessions took 203.6553699998185ms
+2026-07-19 02:32:45.748 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:32:45.748 [info] [GitHub Authentication] Got 1 sessions for ...
+2026-07-19 02:33:06.565 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:33:06.565 [info] [GitHub Authentication] Got 3 sessions for ...
+2026-07-19 02:33:06.566 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:33:06.566 [info] [GitHub Authentication] Got 1 sessions for ...
+2026-07-19 02:33:07.003 [info] [GitHub Copilot Chat] [CopilotCLIChatSessionContentProvider] listSessions took 34.47316900012083ms
+2026-07-19 02:33:37.569 [error] [Codex] [CodexMcpConnection] cli: message="codex_models_manager::manager: failed to refresh available models: unexpected status 401 Unauthorized: Your authentication token has been invalidated. Please try signing in again., url: https://chatgpt.com/backend-api/codex/models?client_version=0.144.5, cf-ray: a1d44330ccd116d4-DAC, auth error: 401, auth error code: token_invalidated"
+2026-07-19 02:34:11.102 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:34:11.102 [info] [GitHub Authentication] Got 3 sessions for ...
+2026-07-19 02:34:11.129 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:34:11.129 [info] [GitHub Authentication] Got 1 sessions for ...
+2026-07-19 02:34:11.214 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:34:11.214 [info] [GitHub Authentication] Got 3 sessions for ...
+2026-07-19 02:34:11.214 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:34:11.215 [info] [GitHub Authentication] Got 1 sessions for ...
+2026-07-19 02:34:11.634 [info] [GitHub Copilot Chat] [CopilotCLIChatSessionContentProvider] listSessions took 11.420670999912545ms
+2026-07-19 02:34:23.500 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:34:23.500 [info] [GitHub Authentication] Got 3 sessions for ...
+2026-07-19 02:34:23.501 [info] [GitHub Authentication] Getting sessions for all scopes...
+2026-07-19 02:34:23.501 [info] [GitHub Authentication] Got 1 sessions for ...
+2026-07-19 02:34:23.920 [info] [GitHub Copilot Chat] [CopilotCLIChatSessionContentProvider] listSessions took 11.770368000026792ms
+2026-07-19 02:34:28.861 [info] [Auth: mcp.facebook.com] Getting sessions for scopes: developer_tools_mcp_app_read developer_tools_mcp_app_management
+2026-07-19 02:34:28.861 [info] [Auth: mcp.facebook.com] Found 0 sessions for scopes: developer_tools_mcp_app_read developer_tools_mcp_app_management
+2026-07-19 02:34:29.281 [info] [GitHub Copilot Chat] message 0 returned. finish reason: [stop]
+2026-07-19 02:34:29.284 [info] [GitHub Copilot Chat] request done: requestId: [659c26b2-013c-4b51-b642-095ddbaf6b90] model deployment ID: []
+2026-07-19 02:34:29.286 [info] [GitHub Copilot Chat] ccreq:47d68c21.copilotmd | success | gpt-4o-mini -> gpt-4o-mini-2024-07-18 | 1609ms | [copilotLanguageModelWrapper]
+2026-07-19 02:34:29.331 [info] [GitHub Copilot Chat] message 0 returned. finish reason: [stop]
+2026-07-19 02:34:29.334 [info] [GitHub Copilot Chat] request done: requestId: [f184a2a6-ca3f-43c6-8eeb-02b8e79bc70c] model deployment ID: []
+2026-07-19 02:34:29.336 [info] [GitHub Copilot Chat] ccreq:0104ec0c.copilotmd | success | gpt-4o-mini -> gpt-4o-mini-2024-07-18 | 1730ms | [copilotLanguageModelWrapper]
+2026-07-19 02:34:31.206 [info] [GitHub Copilot Chat] [ToolCallingLoop] Stop hook result: shouldContinue=false, reasons=undefined
+2026-07-19 02:34:31.206 [info] [GitHub Copilot Chat] [ToolCallingLoop] Autopilot: model produced a text-only response, treating as done
+2026-07-19 02:34:37.286 [warning] [Terminal] Shell integration failed to add capabilities within 10 seconds []
+2026-07-19 02:34:37.287 [warning] [Terminal] Shell integration failed to add capabilities within 10 seconds []
+2026-07-19 02:34:37.290 [warning] [Terminal] Shell integration failed to add capabilities within 10 seconds []
+2026-07-19 02:34:37.292 [warning] [Terminal] Shell integration failed to add capabilities within 10 seconds []
+2026-07-19 02:34:37.292 [warning] [Terminal] Shell integration failed to add capabilities within 10 seconds []
+2026-07-19 02:34:37.293 [warning] [Terminal] Shell integration failed to add capabilities within 10 seconds []
+2026-07-19 02:34:37.294 [warning] [Terminal] Shell integration failed to add capabilities within 10 seconds []
+2026-07-19 02:34:37.296 [warning] [Terminal] Shell integration failed to add capabilities within 10 seconds []
+2026-07-19 02:34:46.470 [info] [MCP: idea] Starting server idea
+2026-07-19 02:34:46.471 [info] [MCP: idea] Connection state: Starting
+2026-07-19 02:34:46.471 [info] [MCP: idea] Starting server from LocalProcess extension host
+2026-07-19 02:34:46.471 [info] [MCP: idea] Connection state: Running
+2026-07-19 02:34:46.496 [info] [MCP: idea] 404 status sending message to http://127.0.0.1:5000/sse, will attempt to fall back to legacy SSE
+2026-07-19 02:34:46.510 [info] [MCP: idea] Connection state: Error 404 status connecting to http://127.0.0.1:5000/sse as SSE: {"error":"Not found"}
+2026-07-19 02:35:10.066 [info] [Auth: mcp.facebook.com] Getting sessions for scopes: developer_tools_mcp_app_read developer_tools_mcp_app_management
+2026-07-19 02:35:10.066 [info] [Auth: mcp.facebook.com] Found 0 sessions for scopes: developer_tools_mcp_app_read developer_tools_mcp_app_management
+2026-07-19 02:35:10.502 [info] [GitHub Copilot Chat] Fetched model metadata in 389ms 339094f3-15c5-4276-ac94-e5916b9785f1
+2026-07-19 02:35:10.963 [info] [GitHub Copilot Chat] ccreq:6e62f1ff.copilotmd | markdown
+2026-07-19 02:35:13.531 [info] [GitHub Copilot Chat] [ToolCallingLoop] Stop hook result: shouldContinue=false, reasons=undefined
+2026-07-19 02:35:13.531 [info] [GitHub Copilot Chat] [ToolCallingLoop] Autopilot: model produced a text-only response, treating as done
+2026-07-19 02:35:26.796 [info] [Git] > git rev-parse --show-toplevel [5ms]
+2026-07-19 02:35:26.796 [info] [Git] fatal: not a git repository (or any of the parent directories): .git
+2026-07-19 02:35:29.358 [info] [Auth: mcp.facebook.com] Getting sessions for scopes: developer_tools_mcp_app_read developer_tools_mcp_app_management
+2026-07-19 02:35:29.358 [info] [Auth: mcp.facebook.com] Found 0 sessions for scopes: developer_tools_mcp_app_read developer_tools_mcp_app_management
+2026-07-19 02:35:42.354 [info] [Terminal] RunInTerminalTool: Command rewritten by AFe: Prepended with a space to exclude from shell history []
+2026-07-19 02:35:42.384 [info] [Terminal] RunInTerminalTool#CommandLineFileWriteAnalyzer: File writes detected [[]]
+2026-07-19 02:35:42.389 [info] [Terminal] RunInTerminalTool: Using `rich` execute strategy for command ` grep -n 'sse\|/mcp\|/sse' /home/sahon/dev/Engine/api.js | grep -i 'route\|endpoint\|case\|url.*===\|url.*startsWith' | head -20` []
+2026-07-19 02:35:42.432 [info] [Terminal] trackIdleOnPrompt: State Initial → Executing (sequence C) []
+2026-07-19 02:35:42.441 [info] [Terminal] trackIdleOnPrompt: State Executing → PromptAfterExecuting (sequence A after executing) []
+2026-07-19 02:35:43.442 [info] [Terminal] trackIdleOnPrompt: Idle scheduler fired, completing (dataEvents=6) []
+2026-07-19 02:35:43.443 [info] [Terminal] RunInTerminalTool: Finished `rich` execute strategy with exitCode `undefined`, result.length `528`, error `undefined` []
+2026-07-19 02:35:43.445 [info] [Terminal] RunInTerminalTool: shellIntegrationQuality=rich at banner decision time []
+2026-07-19 02:35:51.032 [info] [Terminal] RunInTerminalTool: Command rewritten by AFe: Prepended with a space to exclude from shell history []
+2026-07-19 02:35:51.051 [info] [Terminal] RunInTerminalTool#CommandLineFileWriteAnalyzer: Detected cwd ["file:///home/sahon/dev/Engine"]
+2026-07-19 02:35:51.051 [info] [Terminal] RunInTerminalTool#CommandLineFileWriteAnalyzer: File writes detected [["Symbol(null device)"]]
+2026-07-19 02:35:51.052 [info] [Terminal] RunInTerminalTool#CommandLineFileWriteAnalyzer: File write to null device allowed [null]
+2026-07-19 02:35:51.054 [info] [Terminal] RunInTerminalTool: Using `rich` execute strategy for command ` grep -rn 'sse\|jetbrains\|intellij' /home/sahon/.config/JetBrains/ /home/sahon/.config/Code/ 2>/dev/null | grep -i 'mcp\|mission\|barisal' | head -20` []
+2026-07-19 02:35:51.109 [info] [Terminal] trackIdleOnPrompt: State Initial → Executing (sequence C) []
+2026-07-19 02:35:53.463 [warning] [Terminal] Shell integration failed to add capabilities within 10 seconds []
+2026-07-19 02:35:55.757 [info] [Terminal] trackIdleOnPrompt: State Executing → PromptAfterExecuting (sequence A after executing) []
+2026-07-19 02:35:56.757 [info] [Terminal] trackIdleOnPrompt: Idle scheduler fired, completing (dataEvents=33) []
+2026-07-19 02:35:56.769 [info] [Terminal] RunInTerminalTool: Finished `rich` execute strategy with exitCode `undefined`, result.length `undefined`, error `undefined` []
+2026-07-19 02:35:56.771 [info] [Terminal] RunInTerminalTool: shellIntegrationQuality=rich at banner decision time []
+2026-07-19 02:35:58.814 [info] [GitHub Copilot Chat] [ToolCallingLoop] Stop hook result: shouldContinue=false, reasons=undefined
+2026-07-19 02:35:58.814 [info] [GitHub Copilot Chat] [ToolCallingLoop] Autopilot: model produced a text-only response, treating as done
+2026-07-19 02:35:59.842 [info] [GitHub Copilot Chat] message 0 returned. finish reason: [stop]
+2026-07-19 02:35:59.844 [info] [GitHub Copilot Chat] request done: requestId: [4fd2f3ae-24f5-4b86-8600-37e91d9cef08] model deployment ID: []
+2026-07-19 02:35:59.845 [info] [GitHub Copilot Chat] ccreq:79311d3a.copilotmd | success | gpt-4o-mini -> gpt-4o-mini-2024-07-18 | 974ms | [copilotLanguageModelWrapper]
+2026-07-19 02:36:06.800 [warning] [Terminal] Shell integration failed to add capabilities within 10 seconds []
