@@ -137,7 +137,7 @@ const {
 })();
 
 // ─── Config ──────────────────────────────────────────────────
-const PORT = parseInt(process.env.PORT || "5000", 10);
+const PORT = parseInt(process.env.PORT || "9999", 10);
 const OPENCODE_BASE = process.env.OPENCODE_BASE || "https://opencode.ai/zen/v1";
 const MAX_DEBATE_ROUNDS = parseInt(process.env.MAX_DEBATE_ROUNDS || "3", 10);
 const LOG_DIR = path.resolve(process.env.LOG_DIR || "./logs");
@@ -736,7 +736,13 @@ const PROVIDER_CONFIG = {
     key: process.env.OPENCODE_API_KEY || "",
     priority: parseInt(process.env.OPENCODE_PRIORITY || "1", 10),
     type: process.env.OPENCODE_TYPE || "openai",
-    models: parseModelsEnv(process.env.OPENCODE_MODELS || ""),
+    // 🧟 FIX: support BOTH env var names — OPENCODE_MODELS (legacy) and
+    // OPENCODE_PROVIDER_MODELS (as documented in .env.example). Previously
+    // only OPENCODE_MODELS was read, so env-defined model lists silently
+    // never loaded and every model fell back to the live-API normalizer.
+    models: parseModelsEnv(
+      process.env.OPENCODE_MODELS || process.env.OPENCODE_PROVIDER_MODELS || "",
+    ),
   },
   // ── Groq (Secondary Fallback) ────────────────────────────
   // Acts as a pipeline provider — routes model names to their Groq equivalents.
@@ -747,7 +753,9 @@ const PROVIDER_CONFIG = {
     key: process.env.GROQ_API_KEY || "",
     priority: parseInt(process.env.GROQ_PRIORITY || "3", 10),
     type: process.env.GROQ_TYPE || "openai",
-    models: parseModelsEnv(process.env.GROQ_MODELS || ""),
+    models: parseModelsEnv(
+      process.env.GROQ_MODELS || process.env.GROQ_PROVIDER_MODELS || "",
+    ),
   },
   // ── Gemini (Tertiary) ──────────────────────────────────────
   // Requires API key — OpenCode -> Groq -> Gemini fallback chain
@@ -1105,6 +1113,14 @@ async function runNormalizerSync() {
     }
     const fetched = await fetchProviderModels(id, p);
     if (fetched.ok && fetched.models.length > 0) {
+      // Prune stale entries whose apiModel is no longer in the live API
+      // (prevents dead mappings like llama-3.3-70b-versatile from persisting forever)
+      const liveSet = new Set(fetched.models);
+      p.models = p.models.filter(
+        (m) =>
+          getApiModelName(m) === "*" ||
+          liveSet.has(getApiModelName(m)),
+      );
       // Preserve env-defined masked pairs; append new live API models
       const existing = new Map();
       for (const m of p.models) existing.set(getModelName(m), m);
@@ -1467,7 +1483,7 @@ function generateSSOT(rootDir, projectInfo) {
 ## Mission Barisal Context
 - **Server:** Mission Barisal v3 — Multi-Agent Code Platform
 - **Owner:** Sahon Srabon (ZombieCoder) · Barisal, Bangladesh · At Home
-- **Agents:** 6 specialist agents (architecture, debugging, security, performance, documentation, quality)
+- **Agents:** ${typeof AGENTS !== "undefined" && AGENTS.length ? AGENTS.length : 9} specialist agents + mission mode (all ${typeof AGENTS !== "undefined" && AGENTS.length ? AGENTS.length : 9} debate in parallel)
 - **MCP Endpoint:** \`/mcp\` on port ${PORT}
 
 | ID | Name | Role | Priority |
@@ -1681,7 +1697,7 @@ function autoSyllabus(projectDir) {
       "### Core Components",
       "| Component | Location | Description |",
       "|-----------|----------|-------------|",
-      "| **Server** | hamba.js | Port 5000, zero external deps |",
+      "| **Server** | api.js | Port " + (process.env.PORT || "9999") + ", zero external deps |",
       "| **Extension** | VS Code Extension | LanguageModelChatProvider |",
       "| **SSOT** | .zombiecoder/SSOT.md | Single Source of Truth |",
       "| **Syllabus** | .zombiecoder/agents/syllabus.md | Agent learned knowledge |",
@@ -1692,15 +1708,22 @@ function autoSyllabus(projectDir) {
       "2. **syllabus.md** — Agent knowledge (this file — grows over time)",
       "3. **memory.json** — Conversation history",
       "",
-      "### Agent System (6 Agents)",
+      "### Agent System (" + (typeof AGENTS !== "undefined" && AGENTS.length ? AGENTS.length : 9) + " Agents)",
       "| Agent | ID | Persona | Style |",
       "|-------|----|---------|-------|",
-      "| **Architect** | architect | Code Guru - Monu | Barishali playful |",
-      "| **Debugger** | debugger | Bug Hunter | Sergeant serious |",
-      "| **Security** | security | Security Guard | Cautious, paranoid |",
-      "| **Performance** | performance | Speed Freak | Optimization crazy |",
-      "| **Documentation** | docs | Technical Writer | Clean, structured |",
-      "| **Quality** | quality | QA Engineer | Detailed, reviewer |",
+      ...(typeof AGENTS !== "undefined" && AGENTS.length
+        ? AGENTS.map((a) => "| **" + (a.name || a.id) + "** | " + a.id + " | " + (a.role || "general") + " | " + (a.persona ? a.persona.split(".")[0].slice(0, 40) : "Barishali") + " |")
+        : [
+            "| **Code Guru** | code-guru | Code Guru - Monu | Barishali playful |",
+            "| **Bug Hunter** | bug-hunter | Bug Hunter - Jewel | Sergeant serious |",
+            "| **Security Hero** | security-hero | Security Hero - Bablu | Cautious, paranoid |",
+            "| **Performance Wizard** | perf-wizard | Performance Wizard - Rashed | Optimization crazy |",
+            "| **Documentation King** | doc-king | Documentation King - Halim | Clean, structured |",
+            "| **QA Tyrant** | qa-tyrant | QA Tyrant - Mojnu | Detailed, reviewer |",
+            "| **Team Heart** | team-heart | Team Heart - Jara | Empathetic, supportive |",
+            "| **Customer Experience** | customer-experience-specialist | Customer Experience Specialist | Client-focused |",
+            "| **E-Commerce Operations** | ecommerce-operations-analyst | E-Commerce Operations Analyst | Data-driven |",
+          ]),
       "",
       "## 3. Knowledge Log",
       "",
@@ -2989,13 +3012,13 @@ const DEFAULT_AGENTS = [
   },
   {
     id: "security-hero",
-    name: "সিকিউরিটি হিরো - বৃষ্টি",
+    name: "সিকিউরিটি হিরো - বাবলু",
     model: "deepseek-v4-flash-free",
     role: "security",
     expertise: "security audit, vulnerability detection, secure coding, OWASP",
     priority: 3,
     persona:
-      "তুই বৃষ্টি — সিকিউরিটি হিরো। তোর চোখ এড়িয়ে কোনো ভালনারেবিলিটি পার পায় না। এসকিউএল ইনজেকশন, এক্সএসএস, সিকিউরিটি মিসকনফিগারেশন — সব তুই ধইর ফালাইস। বারিশালি স্টাইলে বলবি: 'এই বেটা, এই কোডে এসকিউএল ইনজেকশন আছে। ঠিক কর!' শাওন ভাই সব জানে — সিকিউরিটি গর্ত থাকলে শাওন ভাইকে বলে দিবে।",
+      "তুই বাবলু — সিকিউরিটি হিরো। তোর চোখ এড়িয়ে কোনো ভালনারেবিলিটি পার পায় না। এসকিউএল ইনজেকশন, এক্সএসএস, সিকিউরিটি মিসকনফিগারেশন — সব তুই ধইর ফালাইস। বারিশালি স্টাইলে বলবি: 'এই বেটা, এই কোডে এসকিউএল ইনজেকশন আছে। ঠিক কর!' শাওন ভাই সব জানে — সিকিউরিটি গর্ত থাকলে শাওন ভাইকে বলে দিবে।",
   },
   {
     id: "perf-wizard",
@@ -3027,6 +3050,36 @@ const DEFAULT_AGENTS = [
     priority: 6,
     persona:
       "তুই মজনু — কোয়ালিটি তস্কর। তোর চোখ এড়িয়ে কোনো বাগ পার পায় না। ইউনিট টেস্ট, ইঞ্জিনিয়ারিং কোয়ালিটি, এজ কেস — সব তুই চেক করবি। বারিশালি স্টাইলে বলবি: 'এত গুলা টেস্ট কই? পাশ কইতেছস?' টেস্ট কভারেজ না থাকলে তুই ছাড়বি না। শাওন ভাই সব জানে — ভুল প্রমাণ পেলে শাওন ভাইকে বলে দিবে।",
+  },
+  {
+    id: "team-heart",
+    name: "টিম হার্ট - জারা",
+    model: "deepseek-v4-flash-free",
+    role: "general",
+    expertise: "team coordination, user empathy, communication, morale",
+    priority: 7,
+    persona:
+      "তুই জারা — টিম হার্ট। তুই দলের প্রাণ। সবার কথা শোনিস, সবাইকে একসাথে রাখিস। বারিশালি স্টাইলে বলবি: 'ভাইয়া, সবাই মিলে করলে তো কিছুই কঠিন না!' শাওন ভাই সব জানে — টিমের কোনো সমস্যা হলে শাওন ভাইকে বলে দিবে।",
+  },
+  {
+    id: "customer-experience-specialist",
+    name: "কাস্টমার এক্সপেরিয়েন্স স্পেশালিস্ট",
+    model: "mimo-v2.5-free",
+    role: "customer-experience",
+    expertise: "customer journey, UX, satisfaction, retention, support",
+    priority: 8,
+    persona:
+      "তুই কাস্টমার এক্সপেরিয়েন্স স্পেশালিস্ট। কাস্টমারের সুখই তোর লক্ষ্য। ইউজার জার্নি, স্যাটিসফ্যাকশন, রিটেনশন — সব তুই ভাবিস। বারিশালি স্টাইলে বলবি: 'কাস্টমার খুশি তো ব্যবসা খুশি!' শাওন ভাই সব জানে — কাস্টমার সমস্যা পেলে শাওন ভাইকে বলে দিবে।",
+  },
+  {
+    id: "ecommerce-operations-analyst",
+    name: "ই-কমার্স অপারেশনস অ্যানালিস্ট",
+    model: "big-pickle",
+    role: "ecommerce-operations",
+    expertise: "ecommerce ops, order management, inventory, logistics, analytics",
+    priority: 9,
+    persona:
+      "তুই ই-কমার্স অপারেশনস অ্যানালিস্ট। অর্ডার, ইনভেন্টরি, লজিস্টিকস — সব তুই অ্যানালাইজ করিস। বারিশালি স্টাইলে বলবি: 'অর্ডার ফ্লো ঠিক থাকলে তো সব ঠিক!' শাওন ভাই সব জানে — অপারেশন সমস্যা পেলে শাওন ভাইকে বলে দিবে।",
   },
 ];
 
@@ -3870,13 +3923,18 @@ function updateClientHeartbeat(clientName) {
 }
 
 // Per-agent per-session memory (buffered — batch flush reduces disk I/O)
-function saveAgentMemory(sessionId, agentId, role, content) {
+function saveAgentMemory(sessionId, agentId, role, content, reasoningContent) {
   const dir = path.join(DATA_DIR, sessionId);
   if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
   const file = path.join(dir, agentId + ".json");
   const entry = {
     role,
     content: String(content).slice(0, 4000),
+    // 🧟 DeepSeek thinking mode: reasoning_content must be passed back
+    // in the next request or opencode upstream rejects with 400.
+    ...(reasoningContent
+      ? { reasoning_content: String(reasoningContent).slice(0, 4000) }
+      : {}),
     timestamp: new Date().toISOString(),
   };
   if (!memoryBuffer.has(file)) memoryBuffer.set(file, []);
@@ -4657,10 +4715,22 @@ function callModelStream(
   onChunk,
   tools,
   tool_choice,
+  _retryCount,
+  providerOverride,
 ) {
   return new Promise((resolve) => {
     // ─── Competition Router ────────────────────────────────
-    const { providerId, config } = resolveProvider(model);
+    // Use providerOverride if provided (fallback chain), otherwise
+    // resolve through competition router (priority order).
+    let providerId, config;
+    if (providerOverride) {
+      // Normalize: findNextProvider returns {providerId, config},
+      // proxyChatCompletion flow passes {id, config}.
+      providerId = providerOverride.providerId || providerOverride.id;
+      config = providerOverride.config;
+    } else {
+      ({ providerId, config } = resolveProvider(model));
+    }
     const baseUrl = config.baseUrl;
     const apiKey = config.key;
 
@@ -4697,26 +4767,113 @@ function callModelStream(
       timeout: 60000,
       headers: {
         "Content-Type": "application/json; charset=utf-8",
-        "User-Agent":
-          providerId === "opencode"
-            ? "opencode/latest/1.3.15/cli"
-            : USER_AGENT,
-        ...(providerId === "opencode"
-          ? {
-              "x-opencode-client": "cli",
-              "x-opencode-session": crypto.randomUUID(),
-              "x-opencode-project": crypto.randomUUID(),
-              "x-opencode-request": crypto.randomUUID(),
-            }
-          : {}),
+        "User-Agent": USER_AGENT,
         ...(apiKey ? { Authorization: "Bearer " + apiKey } : {}),
       },
     };
     const proto = url.protocol === "http:" ? http : https;
     const req = proto.request(options, (res) => {
+      const statusCode = res.statusCode || 0;
       let fullContent = "",
-        buffer = "";
+        buffer = "",
+        hasToolCalls = false;
+      let errorData = "";
+      let fullReasoning = ""; // 🧟 track reasoning_content for pass-back
       res.setEncoding("utf8");
+
+      // 🧟 FIX (empty-response bug): providers REJECT oversized/unauthorized
+      // requests with 4xx (context length exceeded, rate limit, bad auth).
+      // These errors were previously swallowed as "empty stream" — the
+      // fallback chain burned through all providers and the client got a
+      // 200 response with 0 bytes, breaking the VS Code extension.
+      if (statusCode < 200 || statusCode >= 300) {
+        res.on("data", (c) => (errorData += c));
+        res.on("end", () => {
+          let errMsg = "HTTP " + statusCode;
+          try {
+            const errBody = JSON.parse(errorData);
+            errMsg =
+              errBody.error?.message ||
+              errBody.error ||
+              errBody.message ||
+              errMsg;
+          } catch (e) {}
+          if (statusCode === 429) {
+            setRateLimited(providerId, model, errMsg);
+          } else {
+            markProviderFailure(providerId, errMsg);
+          }
+          // 🧟 413 Request too large → aggressively trim messages and retry
+          // on the SAME provider before burning the fallback chain. Free-tier
+          // models (e.g. qwen/qwen3.6-27b TPM limit 8000) reject oversized
+          // prompts with 413; trimming to a small window usually fits.
+          // Tools are dropped too — tool definitions consume large tokens.
+          if (
+            statusCode === 413 &&
+            (_retryCount || 0) < 2 &&
+            Array.isArray(messages) &&
+            messages.length > 4
+          ) {
+            const trimmed = [
+              messages[0], // keep system message
+              ...messages.slice(-3), // keep last 3 turns
+            ].filter(Boolean);
+            log("WARN", "STREAM_413_TRIM_RETRY", {
+              from: providerId,
+              status: 413,
+              messagesBefore: messages.length,
+              messagesAfter: trimmed.length,
+              toolsDropped: !!tools,
+            });
+            resolve(
+              callModelStream(
+                model,
+                trimmed,
+                temperature,
+                onChunk,
+                undefined, // no tools — free-tier TPM limits
+                tool_choice,
+                (_retryCount || 0) + 1,
+                { providerId, config },
+              ),
+            );
+            return;
+          }
+          if ((_retryCount || 0) < 3) {
+            const next = findNextProvider(model, providerId);
+            if (next) {
+              log("WARN", "STREAM_PROVIDER_HTTP_ERROR", {
+                from: providerId,
+                to: next.providerId,
+                status: statusCode,
+                error: errMsg,
+              });
+              resolve(
+                callModelStream(
+                  model,
+                  messages,
+                  temperature,
+                  onChunk,
+                  tools,
+                  tool_choice,
+                  (_retryCount || 0) + 1,
+                  next,
+                ),
+              );
+              return;
+            }
+          }
+          resolve({
+            success: false,
+            error: errMsg,
+            status: statusCode,
+            model,
+            provider: providerId,
+          });
+        });
+        return;
+      }
+
       res.on("data", (chunk) => {
         buffer += chunk;
         const lines = buffer.split("\n");
@@ -4733,6 +4890,12 @@ function callModelStream(
             // Mimo/North Mini/Nemotron → reasoning_content has the actual text
             let content = delta.content || "";
             const reasoning = delta.reasoning_content || delta.reasoning || "";
+            if (reasoning) {
+              fullReasoning +=
+                typeof reasoning === "string"
+                  ? reasoning
+                  : JSON.stringify(reasoning);
+            }
             if (!content && reasoning) {
               content =
                 typeof reasoning === "string"
@@ -4740,6 +4903,7 @@ function callModelStream(
                   : JSON.stringify(reasoning);
             }
             const toolCalls = delta.tool_calls || null;
+            if (toolCalls) hasToolCalls = true;
             if (content) fullContent += content;
             if (content || toolCalls) {
               if (onChunk) onChunk({ ...delta, content }, parsed);
@@ -4747,25 +4911,97 @@ function callModelStream(
           } catch (e) { }
         }
       });
-      res.on("end", () =>
+      res.on("end", () => {
+        // 🧟 EMPTY STREAM FALLBACK: if the model returned nothing
+        // (and no tool calls), try the next provider in priority
+        // order — mirrors callModel's fallback chain. Free-tier
+        // models often return 0 chars for large prompts; a
+        // different provider may respond.
+        if (!fullContent && !hasToolCalls && (_retryCount || 0) < 3) {
+          const next = findNextProvider(model, providerId);
+          if (next) {
+            log("WARN", "STREAM_EMPTY_FALLBACK", {
+              from: providerId,
+              to: next.providerId,
+              model,
+            });
+            resolve(
+              callModelStream(
+                model,
+                messages,
+                temperature,
+                onChunk,
+                tools,
+                tool_choice,
+                (_retryCount || 0) + 1,
+                next,
+              ),
+            );
+            return;
+          }
+        }
         resolve({
-          success: true,
+          success: !!(fullContent || hasToolCalls),
           content: fullContent,
+          reasoning_content: fullReasoning || null,
           model,
           provider: providerId,
-        }),
-      );
+        });
+      });
     });
-    req.on("error", (err) =>
+    req.on("error", (err) => {
+      // Network error → try next provider (fallback chain)
+      const next = findNextProvider(model, providerId);
+      if (next && (_retryCount || 0) < 3) {
+        log("WARN", "STREAM_PROVIDER_FALLBACK", {
+          from: providerId,
+          to: next.providerId,
+          error: err.message,
+        });
+        resolve(
+          callModelStream(
+            model,
+            messages,
+            temperature,
+            onChunk,
+            tools,
+            tool_choice,
+            (_retryCount || 0) + 1,
+            next,
+          ),
+        );
+        return;
+      }
       resolve({
         success: false,
         error: err.message,
         model,
         provider: providerId,
-      }),
-    );
+      });
+    });
     req.on("timeout", () => {
       req.destroy();
+      // Timeout → try next provider (fallback chain)
+      const next = findNextProvider(model, providerId);
+      if (next && (_retryCount || 0) < 3) {
+        log("WARN", "STREAM_PROVIDER_TIMEOUT_FALLBACK", {
+          from: providerId,
+          to: next.providerId,
+        });
+        resolve(
+          callModelStream(
+            model,
+            messages,
+            temperature,
+            onChunk,
+            tools,
+            tool_choice,
+            (_retryCount || 0) + 1,
+            next,
+          ),
+        );
+        return;
+      }
       resolve({
         success: false,
         error: "timeout",
@@ -4792,7 +5028,9 @@ function callModel(
     // Use providerOverride if provided, otherwise resolve through competition router
     let providerId, config;
     if (providerOverride) {
-      providerId = providerOverride.id;
+      // Normalize: findNextProvider returns {providerId, config},
+      // proxyChatCompletion flow passes {id, config}.
+      providerId = providerOverride.providerId || providerOverride.id;
       config = providerOverride.config;
     } else {
       ({ providerId, config } = resolveProvider(model));
@@ -4867,18 +5105,7 @@ function callModel(
       timeout: 60000,
       headers: {
         "Content-Type": "application/json; charset=utf-8",
-        "User-Agent":
-          providerId === "opencode"
-            ? "opencode/latest/1.3.15/cli"
-            : USER_AGENT,
-        ...(providerId === "opencode"
-          ? {
-              "x-opencode-client": "cli",
-              "x-opencode-session": crypto.randomUUID(),
-              "x-opencode-project": crypto.randomUUID(),
-              "x-opencode-request": crypto.randomUUID(),
-            }
-          : {}),
+        "User-Agent": USER_AGENT,
         ...(apiKey ? { Authorization: "Bearer " + apiKey } : {}),
       },
     };
@@ -4890,22 +5117,11 @@ function callModel(
       const _proxyReqOpts = {
         method: "POST",
         timeout: 60000,
-        headers: {
-          "Content-Type": "application/json; charset=utf-8",
-          "User-Agent":
-            providerId === "opencode"
-              ? "opencode/latest/1.3.15/cli"
-              : USER_AGENT,
-          ...(providerId === "opencode"
-            ? {
-                "x-opencode-client": "cli",
-                "x-opencode-session": crypto.randomUUID(),
-                "x-opencode-project": crypto.randomUUID(),
-                "x-opencode-request": crypto.randomUUID(),
-              }
-            : {}),
-          ...(apiKey ? { Authorization: "Bearer " + apiKey } : {}),
-        },
+headers: {
+        "Content-Type": "application/json; charset=utf-8",
+        "User-Agent": USER_AGENT,
+        ...(apiKey ? { Authorization: "Bearer " + apiKey } : {}),
+      },
       };
       proxyHttpRequest(url, _proxyReqOpts, body)
         .then(function (_res) {
@@ -4953,6 +5169,39 @@ function callModel(
               return;
             }
             markProviderFailure(providerId, errMsg);
+            // 🧟 413 Request too large → trim messages and retry on the
+            // same provider before falling back (free-tier TPM limits).
+            // Tools dropped too — definitions consume significant tokens.
+            if (
+              _sc === 413 &&
+              (_retryCount || 0) < 2 &&
+              Array.isArray(messages) &&
+              messages.length > 4
+            ) {
+              const _trimmed = [
+                messages[0],
+                ...messages.slice(-3),
+              ].filter(Boolean);
+              log("WARN", "PROVIDER_413_TRIM_RETRY", {
+                from: providerId,
+                status: 413,
+                messagesBefore: messages.length,
+                messagesAfter: _trimmed.length,
+                toolsDropped: !!tools,
+              });
+              resolve(
+                callModel(
+                  model,
+                  _trimmed,
+                  temperature,
+                  undefined, // no tools — free-tier TPM limits
+                  tool_choice,
+                  (_retryCount || 0) + 1,
+                  { providerId, config },
+                ),
+              );
+              return;
+            }
             var _np2 = findNextProvider(model, providerId);
             if (_np2) {
               log("WARN", "PROVIDER_FALLBACK", {
@@ -6795,7 +7044,7 @@ function antiDoteVerifyOutput(contract) {
   // ─── CHECK 2: Combined output exists and has substance ───
   // BUG #8 FIX: Check content quality, not just length
   if (!combined || combined.length < 10) {
-    verification.score -= 20;
+    verification.score -= 10;
     verification.issues.push("Combined output too short or empty");
     verification.checks.push({ check: "has_output", passed: false });
   } else {
@@ -7464,7 +7713,7 @@ async function executeMission(
   const simpleMode =
     classification.type === "greeting" || classification.type === "simple_qa";
 
-  // Smart agent selection: not all 6 for every task
+  // Smart agent selection: not all agents for every task
   let missionAgents = AGENTS;
   if (
     classification.recommended_agents &&
@@ -8385,7 +8634,7 @@ const MCP_TOOLS = {
     required: ["query"],
   },
   agent_mission: {
-    description: "Execute a mission with all 6 agents in parallel",
+    description: "Execute a mission with all agents in parallel",
     params: {
       input: { type: "string", description: "User input" },
       session_id: { type: "string", description: "Optional session ID" },
@@ -11220,7 +11469,19 @@ const tcpServer = net.createServer((socket) => {
 const server = http.createServer(async (req, res) => {
   const startTime = Date.now();
   const method = req.method;
-  const url = req.url.split("?")[0];
+  let url = req.url.split("?")[0];
+  // Normalize duplicate /v1 prefixes from older extension copies.
+  // Some extension builds configure serverUrl as http://host:9999/v1
+  // and then append "/api/..." or "/v1/..." directly, producing
+  //   /v1/api/workspace  -> /api/workspace
+  //   /v1/v1/models      -> /v1/models
+  // which would otherwise 404 because the server routes live at
+  // /api/workspace and /v1/models (not under a doubled prefix).
+  if (url.startsWith("/v1/v1/")) {
+    url = url.slice(3);
+  } else if (url.startsWith("/v1/api/")) {
+    url = url.slice(3);
+  }
   const reqId = crypto.randomUUID
     ? crypto.randomUUID().slice(0, 8)
     : String(Date.now()).slice(-8);
@@ -11234,11 +11495,33 @@ const server = http.createServer(async (req, res) => {
 
   // Store reqId on response for downstream use
   res._reqId = reqId;
+  // 🧟 FIX (diagnostic): count ALL bytes written via res.write() +
+  // res.end(). Previously only the res.end() chunk was counted, so
+  // SSE streams (which write via res.write() then end() without a
+  // chunk) always logged "bytes:0" — making real content look like
+  // an empty response.
+  let _respBytes = 0;
+  const _origWrite = res.write.bind(res);
+  res.write = function (chunk, ...rest) {
+    if (chunk) {
+      _respBytes +=
+        typeof chunk === "string"
+          ? Buffer.byteLength(chunk)
+          : chunk.length || 0;
+    }
+    return _origWrite(chunk, ...rest);
+  };
   const _origEnd = res.end.bind(res);
   res.end = function (chunk, encoding, cb) {
+    if (chunk) {
+      _respBytes +=
+        typeof chunk === "string"
+          ? Buffer.byteLength(chunk)
+          : chunk.length || 0;
+    }
     visualEventFlow("response", `[${reqId}] ${res.statusCode || 200}`, {
       elapsed: Date.now() - startTime + "ms",
-      bytes: chunk ? chunk.length || 0 : 0,
+      bytes: _respBytes,
     });
     return _origEnd(chunk, encoding, cb);
   };
@@ -12984,7 +13267,7 @@ window.__ADMIN_CONFIG = ${JSON.stringify({
       });
 
       // ─── MISSION MODE ────────────────────────────────────
-      if (model === "mission") {
+      if (model === "mission" || model === "agent/mission") {
         const userMsg = messages.filter((m) => m.role === "user").pop();
         let userInput = userMsg ? userMsg.content : "";
         // 🧟 FIX: Handle content array format (OpenAI multi-modal)
@@ -13352,7 +13635,7 @@ window.__ADMIN_CONFIG = ${JSON.stringify({
       }
 
       // ─── SINGLE AGENT MODE ──────────────────────────────
-      const agentId = model; // model param = agent id
+      const agentId = String(model).replace(/^agent\//, ""); // model param = agent id (agent/ prefix optional)
       const agent = AGENTS.find((a) => a.id === agentId);
       if (!agent) {
         jsonResponse(res, 404, {
@@ -13476,10 +13759,111 @@ window.__ADMIN_CONFIG = ${JSON.stringify({
             const histMsgs = history.map((m) => ({
               role: m.role,
               content: m.content,
+              // 🧟 DeepSeek thinking mode: preserved reasoning_content must
+              // be passed back or opencode upstream rejects with 400.
+              ...(m.reasoning_content
+                ? { reasoning_content: m.reasoning_content }
+                : {}),
             }));
             augmentedMessages = [sysMsg, ...histMsgs, ...messages];
           }
         }
+
+        // 🧟 REASONING_PASSBACK INJECT (opencode 400 fix): the VS Code
+        // extension sends the FULL conversation history, but assistant
+        // messages carry only `content` — the `reasoning_content` produced
+        // by DeepSeek thinking mode is lost. opencode upstream then rejects
+        // with 400 "The reasoning_content in the thinking mode must be
+        // passed back". Re-attach reasoning_content from agent memory to
+        // matching assistant messages before sending the request.
+        if (sessionId) {
+          const mem = getAgentMemory(sessionId, agentId);
+          const reasoningByContent = new Map();
+          for (const m of mem) {
+            if (m.role === "assistant" && m.reasoning_content && m.content) {
+              reasoningByContent.set(m.content.slice(0, 200), m.reasoning_content);
+            }
+          }
+          for (const m of augmentedMessages) {
+            if (
+              m &&
+              m.role === "assistant" &&
+              m.content &&
+              !m.reasoning_content
+            ) {
+              const hit = reasoningByContent.get(m.content.slice(0, 200));
+              if (hit) m.reasoning_content = hit;
+            }
+          }
+        }
+
+        // 🧟 FIX (context overflow → empty response): the extension sends
+        // the FULL conversation history (92+ messages ≈ 66K tokens). Free
+        // tier models reject such oversized prompts with 4xx, which the
+        // old code swallowed as "empty stream" — client got 200 with 0
+        // bytes and broke. Cap to sysMsg + last N conversation messages.
+        const MAX_CLIENT_MESSAGES = 24; // keep latest 24 + system
+        if (augmentedMessages.length > MAX_CLIENT_MESSAGES + 1) {
+          let trimmed = [
+            augmentedMessages[0], // keep the system message (sysMsg)
+            ...augmentedMessages.slice(-MAX_CLIENT_MESSAGES),
+          ];
+          // SAFE-TRIM: never start the window with a "tool" message
+          // (its assistant tool_calls was cut off) — providers reject
+          // with 400 "Messages with role 'tool' must be a response to
+          // a preceding message with 'tool_calls'".
+          while (
+            trimmed.length > 1 &&
+            trimmed[1] &&
+            trimmed[1].role === "tool"
+          ) {
+            trimmed.splice(1, 1);
+          }
+          // Strip orphaned assistant tool_calls (whose tool responses
+          // were cut off) and drop their partial tool messages.
+          for (let i = 1; i < trimmed.length; i++) {
+            const m = trimmed[i];
+            if (
+              m &&
+              m.role === "assistant" &&
+              m.tool_calls &&
+              Array.isArray(m.tool_calls) &&
+              m.tool_calls.length > 0
+            ) {
+              let j = i + 1;
+              let toolCount = 0;
+              while (
+                j < trimmed.length &&
+                trimmed[j] &&
+                trimmed[j].role === "tool"
+              ) {
+                toolCount++;
+                j++;
+              }
+              if (toolCount < m.tool_calls.length) {
+                delete m.tool_calls;
+                trimmed.splice(i + 1, toolCount);
+              }
+            }
+          }
+          augmentedMessages = trimmed;
+        }
+        // Trim oversized tool-result messages (biggest token hogs)
+        augmentedMessages = augmentedMessages.map((m) => {
+          if (
+            m &&
+            m.role === "tool" &&
+            typeof m.content === "string" &&
+            m.content.length > 1500
+          ) {
+            return {
+              ...m,
+              content:
+                m.content.slice(0, 1500) + "\n...[truncated by server]",
+            };
+          }
+          return m;
+        });
 
         const toolsForStream =
           tools ||
@@ -13497,10 +13881,20 @@ window.__ADMIN_CONFIG = ${JSON.stringify({
 
         // 🧟 EMPTY RESPONSE RETRY: If model returns empty, retry once without tools
         let retryWithoutTools = false;
+        let fullReasoning = ""; // 🧟 track reasoning_content for pass-back
         const streamCallback = (delta, parsed) => {
             const content = delta.content || "";
             const toolCalls = delta.tool_calls || null;
             if (content) fullContent += content;
+            // 🧟 DeepSeek thinking mode: collect reasoning_content so it can
+            // be passed back in the next request (avoids opencode 400).
+            const reasoningDelta = delta.reasoning_content || delta.reasoning || "";
+            if (reasoningDelta) {
+              fullReasoning +=
+                typeof reasoningDelta === "string"
+                  ? reasoningDelta
+                  : JSON.stringify(reasoningDelta);
+            }
 
             const chunk = {
               id: responseId,
@@ -13520,7 +13914,7 @@ window.__ADMIN_CONFIG = ${JSON.stringify({
         };
 
         // First attempt: with tools
-        await callModelStream(
+        let streamResult = await callModelStream(
           agent.model,
           augmentedMessages,
           temperature,
@@ -13534,16 +13928,51 @@ window.__ADMIN_CONFIG = ${JSON.stringify({
           log("WARN", "EMPTY_RESPONSE_RETRY", {
             agent: agent.id,
             tools: toolsForStream.length,
-            reason: "model returned 0 chars with tools, retrying without tools",
+            reason:
+              "model returned empty/too-short response with tools, retrying without tools",
           });
           fullContent = ""; // reset
-          await callModelStream(
+          fullReasoning = ""; // reset too — retry may produce new reasoning
+          streamResult = await callModelStream(
             agent.model,
             augmentedMessages,
             temperature,
             streamCallback,
             undefined, // no tools on retry
           );
+        }
+
+        // 🧟 FIX (empty-response bug): if ALL providers failed with a real
+        // HTTP error, tell the client instead of silently returning a 200
+        // with 0 bytes — which previously broke the VS Code extension.
+        if (!fullContent && streamResult && streamResult.success === false) {
+          const errText =
+            "⚠️ সার্ভার এরর — মডেল রেসপন্স দিতে ব্যর্থ হয়েছে" +
+            (streamResult.error
+              ? " [" + String(streamResult.error).slice(0, 160) + "]"
+              : "") +
+            "।\n\nসম্ভাব্য কারণ: কনভারসেশন অনেক বড় (কনটেক্সট লিমিট) অথবা " +
+            "provider-এ সাময়িক সমস্যা। কনভারসেশন ছোট করুন অথবা নতুন চ্যাট " +
+            "শুরু করে আবার চেষ্টা করুন।";
+          const errChunk = {
+            id: responseId,
+            object: "chat.completion.chunk",
+            created: Math.floor(Date.now() / 1000),
+            model: agent.id,
+            choices: [
+              {
+                index: 0,
+                delta: { content: errText },
+                finish_reason: null,
+              },
+            ],
+          };
+          res.write("data: " + JSON.stringify(errChunk) + "\n\n");
+          log("WARN", "SINGLE_AGENT_STREAM_FAILED", {
+            agent: agent.id,
+            error: streamResult.error,
+            status: streamResult.status,
+          });
         }
 
         // Final [DONE] chunk
@@ -13585,7 +14014,13 @@ window.__ADMIN_CONFIG = ${JSON.stringify({
           if (userMsg)
             saveAgentMemory(sessionId, agentId, "user", userContent);
           if (fullContent)
-            saveAgentMemory(sessionId, agentId, "assistant", fullContent);
+            saveAgentMemory(
+              sessionId,
+              agentId,
+              "assistant",
+              fullContent,
+              fullReasoning, // 🧟 pass-back for DeepSeek thinking mode
+            );
           saveMemory(sessionId, "user", userContent);
           saveMemory(sessionId, "assistant", fullContent);
           updateSession(sessionId, {
